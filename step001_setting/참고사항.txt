@@ -1,0 +1,35 @@
+이메일: whyeil29@gmail.com
+
+3. 참고 사이트
+https://www.w3schools.com/
+
+4. 소스 빌드용 폴더 생성하기!
+
+5. 강의 동영상 백업 유튜브: 자바 기반 풀스택 개발자 과정
+https://www.youtube.com/channel/UCdHkJVwwhMzlza-iRYIgc5A
+
+6. 소스 깃허브
+
+https://github.com/wipg/jfs
+
+7. 우수 사이트 모음
+디비컷  https://www.dbcut.com
+굿디자인웹  https://www.gdweb.co.kr/main/
+어워즈 https://www.awwwards.com/
+
+8. 회원가입
+닷홈    https://www.dothome.co.kr/
+깃허브  https://github.com/
+
+10. UI/UX 참고자료
+
+1) UX 개념의 예 :  피아노건반 계단
+- The Fun Theory 동영상 시리즈 1번
+https://youtu.be/SByymar3bds
+
+2) 인터페이스 개념
+- 나건교수 동영상
+https://youtu.be/EKFM5yeXdck
+
+-> 소통이 이루지는 장소에서 사용되는 
+수단과 방법을 인터페이스라고함!

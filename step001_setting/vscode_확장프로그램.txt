@@ -1,0 +1,8 @@
+한국어
+Live Server: f12 -> 실시간 수정
+Live Server Preview: shift+f2 -> vscode 프로그램으로 직접 확인
+open in browser: alt+b, shift+alt+b
+Auto Rename Tag
+Auto Close Tag
+Color Highlight
+Highlight Matching Tag
