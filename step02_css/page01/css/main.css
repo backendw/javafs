@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* 네이버 뉴스 메인 CSS - main.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Nanum+Gothic&display=swap');
+
+/* 공통 */
+.container {
+    width: 750px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 헤더 영역 */
+header {
+    height: 150px;
+    text-align: center;
+    background-color: rgba(226, 223, 223, 0.74);
+}
+header h1 {
+    font-size: 40px;
+    font-weight: normal;
+    font-family: 'Black And White Picture', sans-serif;
+    color: #000;
+    letter-spacing: 2px;
+    line-height: 1;
+    word-spacing: 10px;
+}
+
+/* GNB */
+#gnb > a {
+    color: navy;
+    font: bold 16px/2 'Nanum Gothic', sans-serif;
+    margin: 0 5px;
+}
+#gnb > a+a:hover {
+    color:hotpink;
+    text-decoration: underline;
+    outline: 1px solid hotpink;
+}
+
+/* 로고 링크 */
+header img {
+    width: 20px !important;
+    vertical-align: -5px;
+    margin-right: -5px;
+}
+
+/* 메인 영역 */
+main img {
+    width:100%;
+}
+
+/* 푸터 영역 */
+footer {
+    text-align: center;
+    background-color: rgb(44, 44, 44);
+    color: #fff;
+}
+/* 주소 요소 */        
+footer address {
+    font-style: normal;
+    font-size: 14px;
+    font-family: 'Nanum Gothic', sans-serif;
+    line-height: 2;
+    color: #ccc;
+}
+
+/* 대표자 */
+footer address span {
+    font-family: 'Black And White Picture', sans-serif;
+    color: white;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
