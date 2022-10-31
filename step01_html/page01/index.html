@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>네이버</title>
+    <style>
+        /* 헤더 영역 */
+        header {
+            height: 150px;
+        }
+
+        /* 메인영역 이미지 */
+        main img {
+            width:100%;
+        }
+
+        /* 박스 공통 */
+        .container {
+            width: 750px;
+            border: 2px solid #000;
+            padding: 20px;
+            margin: 50px auto;
+        }
+    </style>
 </head>
 <body>
-    <!-- 상단영역 -->
-    <div class="header">
+    <!-- 헤더 영역 -->
+    <header class="container header">
         <!-- 타이틀 -->
         <h1>네이버 뉴스</h1>
         <!-- GNB -->
-        <div id="gnb">
+        <nav id="gnb">
             <a href="#">
                 <img src="images/naverlogo.png" alt="네이버 로고" style="width:20px;">
             </a>
@@ -19,15 +38,21 @@
             <a href="#">사회</a>
             <a href="#">과학</a>
             <a href="#">연예</a>
-        </div>
-    </div>
+        </nav>
+    </header>
     <!-- 메인영역 -->
-    <div class="main">
-
-    </div>
+    <main class="container main">
+        <!-- 메인이미지 -->
+        <img src="images/main.jpg" alt="메인뉴스 이미지">
+    </ㅡ>
     <!-- 하단영역 -->
-    <div class="footer">
-
-    </div>
+    <footer class="container footer">
+        <!-- 회사주소 및 정보 -->
+        <address>
+            서울시 강남구 역삼동 119 대호B 8F<br>
+            대표: Tom Brace Parker<br>
+            전화: 010-3333-4444
+        </address>
+    </footer>
 </body>
 </html>
