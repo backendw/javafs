@@ -1,3 +1,32 @@
 @charset "utf-8";
 @import url(common.css);
 /* 네이버 뉴스 서브페이지 CSS - sub.css */
+
+/* 메인 영역 */
+.main {
+    padding: 15px;
+}
+
+/* 언론사 로고 */
+.prlogo img {
+    height: 32px;
+}
+/* 기사제목 */
+.atit {
+    font-size: 30px;
+    font-weight: normal;
+    font-family: '굴림', sans-serif;
+    letter-spacing: -2px;
+    word-spacing: -1px;
+}
+/* 기사사진 (+사진설명)*/
+.afig {
+    margin: 15px 0;
+    text-align: center;
+}
+.afig img {
+    max-width: 100%;
+}
+/* 기사내용 */
+/* 기자정보 */
+/* 기사원문 */
