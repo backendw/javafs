@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width:1000px;
+            border-collapse: collapse;
+            color: #333;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+        caption {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            padding: 50px 0 20px;
+        }
+        td, th {
+            padding: 8px 10px;
+        }
+
+        /* thead */
+        th {
+            border-top: 2px solid #555;
+            border-bottom: 2px solid #555;
+        }
+
+        /* tbody */
+        tbody td {
+            border-bottom: 1px dotted #ccc;
+        }
+        tbody tr:last-of-type td {
+            border-bottom: 2px solid #555;
+        }
+        tbody tr:nth-of-type(even) {
+            background:#ededed;
+        }
+        tbody td:first-of-type, td:last-of-type {
+            text-align: center;
+        }
+        
+        /* tfoot */
+        tfoot td {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* tbody 링크 */
+        tbody a {
+            text-decoration: none;
+            color:#333;
+        }
+        tbody a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* tfoot 링크 */
+        tfoot a {
+            text-decoration: none;
+            color:#333;
+        }
+        tfoot a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>테이블</h1>
+    <table>
+        <caption>공지사항</caption>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>제목</th>
+                <th>등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>753</td>
+                <td><a href="#" target="_blank">교촌치킨, 3년간 지역사회에 치킨쿠폰 후원한 점주에 ‘교촌 드림히어로’ 표창</a></td>
+                <td>2022-10-19</td>
+            </tr>
+            <tr>
+                <td>752</td>
+                <td><a href="#" target="_blank">교촌치킨, 교촌 점주와 임직원 모였다… ‘소방관 아버지’에 감사함 담은 치킨 전달</a></td>
+                <td>2022-10-19</td>
+            </tr>
+            <tr>
+                <td>751</td>
+                <td><a href="#" target="_blank">교촌치킨, 영화관에서 만나는 ‘블랙시크릿’… 메가박스 손잡고 ‘블랙시크릿팝콘’ 출시</a></td>
+                <td>2022-10-19</td>
+            </tr>
+            <tr>
+                <td>750</td>
+                <td><a href="#" target="_blank">교촌치킨, 사회초년생 촌스러버 사연에 가맹점주와 임직원 모였다… 치킨 나눔 활동 진행</a></td>
+                <td>2022-10-19</td>
+            </tr>
+            <tr>
+                <td>749</td>
+                <td><a href="#" target="_blank">교촌치킨, 12년만에 탄생한 또 하나의 역작 … ‘블랙시크릿콤보’ 출시</a></td>
+                <td>2022-10-19</td>
+            </tr>
+            <tr>
+                <td>748</td>
+                <td><a href="#" target="_blank">교촌에프앤비㈜, 스타트업과 점주 위한 IT 솔루션 개발 나선다</a></td>
+                <td>2022-10-19</td>
+            </tr>
+            <tr>
+                <td>747</td>
+                <td><a href="#" target="_blank">2022년도 교촌에프앤비㈜ 부분육 구매 업체 선정 입찰 공고</a></td>
+                <td>2022-09-30</td>
+            </tr>
+            <tr>
+                <td>746</td>
+                <td><a href="#" target="_blank">2022년도 교촌에프앤비㈜ 부분육(냉동) 구매 업체 선정 입찰 공고_1차</a></td>
+                <td>2022-09-22</td>
+            </tr>
+            <tr>
+                <td>745</td>
+                <td><a href="#" target="_blank">교촌치킨 멤버십이 새로워집니다.</a></td>
+                <td>2022-09-05</td>
+            </tr>
+            <tr>
+                <td>744</td>
+                <td><a href="#" target="_blank">2022년도 교촌에프앤비 부분육 구매업체 선정 입찰공고(9월1일_9월30일)</a></td>
+                <td>2022-08-23</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">1 <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a> Next End</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
