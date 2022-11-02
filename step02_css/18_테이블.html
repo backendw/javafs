@@ -6,72 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table {
+        .notice {
             width:1000px;
             border-collapse: collapse;
             color: #333;
             margin: 0 auto;
             font-size: 14px;
         }
-        caption {
+        .notice caption {
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 5px;
             padding: 50px 0 20px;
         }
-        td, th {
+        .notice td, .notice th {
             padding: 8px 10px;
         }
 
         /* thead */
-        th {
+        .notice th {
             border-top: 2px solid #555;
             border-bottom: 2px solid #555;
         }
 
         /* tbody */
-        tbody td {
+        .notice tbody td {
             border-bottom: 1px dotted #ccc;
         }
-        tbody tr:last-of-type td {
+        .notice tbody tr:last-of-type td {
             border-bottom: 2px solid #555;
         }
-        tbody tr:nth-of-type(even) {
+        .notice tbody tr:nth-of-type(even) {
             background:#ededed;
         }
-        tbody td:first-of-type, td:last-of-type {
+        .notice tbody td:first-of-type, td:last-of-type {
             text-align: center;
         }
         
         /* tfoot */
-        tfoot td {
+        .notice tfoot td {
             text-align: center;
             padding: 30px 0;
         }
 
         /* tbody 링크 */
-        tbody a {
+        .notice tbody a {
             text-decoration: none;
             color:#333;
         }
-        tbody a:hover {
+        .notice tbody a:hover {
             color: red;
             text-decoration: underline;
         }
 
         /* tfoot 링크 */
-        tfoot a {
+        .notice tfoot a {
             text-decoration: none;
             color:#333;
         }
-        tfoot a:hover {
+        .notice tfoot a:hover {
             color: blue;
+        }
+
+        /* 지역 */
+        .area  {
+            width: 1000px;
+            margin: 0 auto;
+            margin-bottom: 100px;
+            overflow:hidden;
+        }
+        .area table {
+            float:right;
+            font-style: 20px;
+            border:1px solid #999;
+        }
+        .area td {
+            padding: 10px;
+        }
+        .area tr:first-of-type td:first-of-type {
+            border-right:1px dotted #999;
+        }
+        .area tr+tr td {
+            border-top:1px dotted #999;
         }
     </style>
 </head>
 <body>
     <h1>테이블</h1>
-    <table>
+    <table class="notice">
         <caption>공지사항</caption>
         <thead>
             <tr>
@@ -138,5 +160,32 @@
             </tr>
         </tfoot>
     </table>
+
+    <div class="area">
+        <table>
+            <tr>
+                <td rowspan="7">지역</td>
+                <td>본사/서울</td>
+            </tr>
+            <tr>
+                <td>경기</td>
+            </tr>
+            <tr>
+                <td>충청</td>
+            </tr>
+            <tr>
+                <td>강원</td>
+            </tr>
+            <tr>
+                <td>전라</td>
+            </tr>
+            <tr>
+                <td>경상</td>
+            </tr>
+            <tr>
+                <td>제주</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
