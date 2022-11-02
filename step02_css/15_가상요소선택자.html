@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style:none; 
+            border: 1px solid black;
+        }
+        ul::after {
+            content: '🍗'; /* 이모지 -> 윈+. */
+            height:0px;
+            display:block;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid red;
+        }
+        p::first-line {
+            text-decoration: underline wavy;
+        }
+        p::first-letter {
+            font-size:2em;
+        }
+        p::selection {
+            background:rgba(255,0,0,0.5);
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>가상 요소(Pseudo-elements) 선택자</h1>
+    <ul>
+        <li>::before</li>
+        <li>::after</li>
+        <li>::first-letter</li>
+        <li>::first-line</li>
+        <li>::selection</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo, quam consequatur culpa delectus animi eligendi sit vitae, minima voluptate cum quos rerum eaque. Tenetur eos nostrum animi dolorum omnis!</p>
+</body>
+</html>
