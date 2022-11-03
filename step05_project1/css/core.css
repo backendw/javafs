@@ -13,11 +13,35 @@
     4. 전체 공통체(메뉴 등)
     font-family: 'Nanum Gothic', sans-serif;
 */
+
 body {
     font-family: 'Nanum Gothic', sans-serif;
 }
+
 /* inbox */
 .ibx {
     max-width:1200px;
     margin:0 auto;
 }
+
+/* 스크롤바 디자인 클래스 */
+/* 밴더사명 접두어
+    -webkit- (크롬, 사파리)
+    -ms-(IE)
+    -o-(오페라)
+    -moz-(파이어폭스)
+ */
+ /* 전체 스크롤바 크기 변경 */
+ .scbar::-webkit-scrollbar {
+    width: 7px;
+ }
+ /* 스크롤바 */
+ .scbar::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 5px;
+ }
+ /* 스크롤바 트랙 */
+ .scbar::-webkit-scrollbar-track {
+    background-color: #ddd;
+    border-radius: 5px;
+ }
