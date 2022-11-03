@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {height:100px;}
+        body > div {outline:1px solid red;}
+        div div {width:200px; height:100px;}
+        div div:nth-of-type(1) {background:red;}
+        div div:nth-of-type(2) {background:green;}
+        div div:nth-of-type(3) {background:cyan;}
+        div div:nth-of-type(4) {background:yellow;}
+
+        .case1 {height:100px;}
+        .case2 {overflow:hidden;}
+        .case3 {clear:both;}
+        .clearfix::after {content:''; display:block; clear:both;}
+
+        .fl {float:left;}
+        .fr {float:right;}
+        .cb {clear:both}
+    </style>
+</head>
+<body>
+    <h1>float</h1>
+    <p>다음은 자식 요소를 float 했을 때 부모 높이를 지정 방법이다.</p>
+    <h2>height</h2>
+    <div class="case">
+        <div class="fl">1</div>
+        <div class="fr">2</div>
+        <div class="cb">3</div>
+        <div>4</div>
+    </div>
+    <h2>overflow:hidden;</h2>
+    <div class="case2">
+        <div class="fl">1</div>
+        <div class="fr">2</div>
+        <div class="cb fl">3</div>
+        <div class="fr">4</div>
+    </div>
+    <h2>clear:both;</h2>
+    <div>
+        <div class="fl">1</div>
+        <div class="fr">2</div>
+        <div class="fl">3</div>
+        <div class="fr">4</div>
+    </div>
+    <div class="case3"></div>
+    <h2>.clearfix::after</h2>
+    <div class="clearfix">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

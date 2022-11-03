@@ -1,2 +1,17 @@
 @charset "utf-8";
 /* 도깨비 프로젝트 공통모듈 CSS - common.css */
+/* 상단 영역, 하단 영역의 반복 디자인 */
+
+
+/* header */
+.top {
+    height: 128px;
+}
+/* main */
+.cont {
+    height: 969px;
+}
+/* footer */
+.foot {
+    height: 241px;
+}
