@@ -17,10 +17,56 @@ body {
     url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
 }
 
+/* main */
+.cont {
+    height: 969px;
+    overflow:hidden;
+}
+
+/* 전체 캐릭터 박스 */
+.cbx {
+    width:90%;
+    margin:0 auto;
+    margin-top: 500px;
+}
+
+/* clearfix */
+.clearfix::after {
+    content: '';
+    display:block;
+    clear:both;
+}
+
 /* 캐릭터 이미지 */
 .cat {
     float: left;
+    width: 24%;
+    margin: 0 .5%;
 }
-.cat img {
-    width: 200px;
+.ci > img {
+    width: 100%;
+}
+
+/* 캐릭터 이름 박스 */
+.ci figcaption {
+    text-align: center;
+    margin-top: -20%; /* % 기준은 부모 박스 너비 */
+}
+
+/* 캐릭터 이름 이미지 공통 */
+.ci figcaption img {
+    width: 50%; /* % 기준은 부모 박스 너비 */
+}
+
+/* 캐릭터 이름 이미지 */
+.ci figcaption img:first-child {
+    display:none;
+}
+
+/* 캐릭터 이미지 박스에 마우스 오버시 */
+.cat:hover .ci figcaption img:first-child {
+    display:inline;
+}
+.cat:hover .ci figcaption img:last-child {
+    display:none;
 }
