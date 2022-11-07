@@ -9,6 +9,12 @@ body, h1, h2, h3, ol, ul {
     margin:0; padding:0;
 }
 
+html {
+    scroll-behavior: smooth;
+    /* 내부 아이디 요소로 스크롤 위치 이동시 스크롤 애니메이셔 처리가
+    되도록 설정하는 속성으로 html에 셋팅하면 전체 페이지 스크롤에 적용됨 */
+}
+
 /* 전체 배경 */
 body {
     height:3000px;
@@ -62,6 +68,38 @@ body {
 .link a:hover {
     color: orangered;
     text-decoration: overline;
+}
+/* 위로가기버튼 */
+.btnTop {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: 5px outset #fff;
+}
+/* 버튼 a요소 */
+.btnTop a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: blue;
+    /* 
+        line-height:90px;인 이유는 버튼의 box-sizing:border-box로
+        높이 - 보더 * 2 = 100xp - 5px * 2 = 90px
+    */
+    font: 30px/90px 'Black Ops One';
+    text-decoration: none;
+}
+/* 위로가기버튼 오버시 */
+.btnTop:hover {
+    background-color: #ff0;
+    border-style: inset;
+}
+.btnTop:hover a {
+    color:red;
 }
 
 /* 로봇박스 */

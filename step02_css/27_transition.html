@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            transition: [속성] 전환시간 [지연시간] [시간함수];
+            시간함수
+                1) ease(기본값)
+                2) ease-in: 점점 빨라짐
+                3) ease-out: 점점 느려짐
+                4) ease-in-out: 처음과 마지막이 모두 느림
+                5) cubic-bezier(n,n,n,n): https://cubic-bezier.com/#.17,.67,.83,.67
+                6) steps(n)
+
+        */
+        div {
+            position: relative;
+            width:500px;
+            height:100px;
+            border:1px solid red;
+        }
+        span {
+            position: absolute;
+            left:0; /* 초기값이 지정되어 있어야한다. */
+            width:100px; height:100px;
+            background:yellow;
+        }
+        div:hover .trs1 {
+            left:300px;
+            
+        }
+        .trs1 {
+            transition: 1s;
+        }
+
+        /* 마우스 오버시에만 적용 */
+        div:hover .trs2 {
+            left:300px;
+            transition: all 1s 2s;
+        }
+
+        div:hover .trs3 {
+            left:300px;
+            
+        }
+        .trs3 {
+            transition: left ease-in 1s;
+        }
+
+        div:hover .trs4 {
+            left:300px;
+            background: #000;
+            
+        }
+        .trs4 {
+            transition: left ease-in 1s, background 1s 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>transition(전환)</h1>
+    <ul>
+        <li>transition-propery: all, ...</li>
+        <li>transition-duration: 숫자s</li>
+        <li>transition-timing-function: ease, ease-in, ease-out, ease-in-out, linear, ...</li>
+        <li>transition-delay: 숫자s</li>
+    </ul>
+    <div><span class="trs1"></span></div>
+    <div><span class="trs2"></span></div>
+    <div><span class="trs3"></span></div>
+    <div><span class="trs4"></span></div>
+</body>
+</html>
