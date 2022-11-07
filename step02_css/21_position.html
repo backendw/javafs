@@ -51,6 +51,40 @@
             background:black;
             color:white;
         }
+        .parent2 {
+            position:relative;
+            width:200px; height:200px;
+            top:200px;
+        }
+        .parent2 div.zero {
+            position:absolute;
+            width:auto;
+            height:auto;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            background:green;
+        }
+        .slide {
+            position:fixed;
+            left:-450px;
+            bottom:0;
+            width:500px;
+            transition: .3s;
+        }
+        .slide:hover {
+            left:0;
+        }
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            left:50%;
+            top: 100px;
+            padding: 5px;
+            background-color: #cae8ca;
+            border: 2px solid #4CAF50;
+        }
     </style>
 </head>
 <body>
@@ -67,6 +101,8 @@
         <li>z-index 속성은 기본값은 0, 양수이면 위로, 음수이면 아래로 배치된다.</li>
         <li>absolute와 fixed의 width를 지정하지 않으면 내용 크기만큼 지정된다.</li>
         <li>absolute와 fixed를 인라인 요소에 지정하면 display가 block으로 지정된다.</li>
+        <li>absolute는 left, top, right, bottom을 모두 0으로 지정하면 width:100%; height:100%와 같다.</li>
+        <li>sticky는 주어진 오프셋 위치가 뷰포트에서 만날 때까지 상대(relative)적으로 배치된 다음 제자리에 고정(fixed)된다.</li>
     </ol>
 
     <div class="static">static</div>
@@ -74,10 +110,15 @@
     <div class="absolute">absolute</div>
     <div class="fixed">fixed</div>
     <div>no-position</div>
-    <div class="parent">
-        <div>
+    <div class="sticky">I am sticky!</div>
+    <div class="grandparent">
+        <div class="parent">
             <div class="absolute">absolute</div>
         </div>
     </div>
+    <div class="parent2">
+        <div class="zero">상하좌우 모두 0 일때</div>
+    </div>
+    <div class="slide">호버시 슬라이드</div>
 </body>
 </html>

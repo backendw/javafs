@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width:200px;
+            height: 200px;
+        }
+        .box1 {
+            border:1px solid red;
+            text-align:center;
+        }
+        .box2 {
+            border:1px solid red;
+            text-align:center;
+            line-height:200px;
+        }
+        .box3 {
+            border:1px solid red;
+            text-align:center;
+            /* 줄간격 + 이미지 높이/2 */
+            line-height:calc(200px + 17px);
+        }
+    </style>
+</head>
+<body>
+    <h1>인라인 요소의 정렬</h1>
+    <h2>텍스트 가로 정렬</h2>
+    <div class="box1">텍스트</div>
+    <h2>이미지 가로 정렬</h2>
+    <div class="box1"><img src="/assets/images/naverlogo.png" alt="네이버 로고"></div>
+    <h2>텍스트 중앙 정렬</h2>
+    <div class="box2">텍스트</div>
+    <h2>이미지 중앙 정렬</h2>
+    <div class="box3"><img src="/assets/images/naverlogo.png" alt="네이버 로고"></div>
+</body>
+</html>
