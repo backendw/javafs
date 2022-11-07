@@ -98,3 +98,115 @@ body {
     right: -60px;
     border-radius: 0 30px 30px 0;
 }
+
+/* 로봇몸통 */
+.body {
+    position: relative;
+    width:250px;
+    height:310px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+/* 목 */
+.neck {
+    position: absolute;
+    top: -50px;
+    left: 95px;
+    width: 60px;
+    height: 50px;
+}
+/* 팔공통 */
+.arm {
+    position: absolute;
+    width:50px;
+    height: 250px;
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 가상요소로 손 만들기 */
+.arm::before {
+    content:'';
+    /* display:block; */
+    position: absolute;
+    bottom: -25px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-image:
+        /* linear-gradient(red, blue); */
+        /* linear-gradient(to right, red, blue); */
+        /* linear-gradient(to right, red 5%, blue 10%, blue 80%, yellow); */
+        /* linear-gradient(45deg, red, blue,yellow); */
+        /* radial-gradient(red, blue, yellow); */
+        /* radial-gradient(circle, red, blue, yellow); */
+        radial-gradient(farthest-side at 40% 40%, white, #333);
+}
+/* 왼쪽 가상요소 위치 */
+.arm.a1::before {
+    left:-12px;
+}
+/* 오른쪽 가상요소 위치 */
+.arm.a2::before {
+    right:-12px;
+}
+/* 가상요소로 손그림자주기 */
+.arm::after {
+    content: '';
+    display:block;
+    position: absolute;
+    bottom: -25px;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 5px;
+}
+/* 왼손 그림자 위치 */
+.arm.a1::after {
+    left: 13px;
+}
+/* 오른손 그림자 위치 */
+.arm.a2::after {
+    right: 13px;
+}
+
+/* 왼팔 */
+.a1 {
+    left: -60px;
+}
+.a2 {
+    right: -60px;
+}
+/* 다리공통 */
+.leg {
+    position: absolute;
+    top: 100%;
+    width: 70px;
+    height: 300px;
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 왼다리 */
+.l1 {
+    left:0;
+}
+/* 오른다리 */
+.l2 {
+    right:0;
+}
+/* 어깨공통 */
+.shd {
+    position: absolute;
+    top: -20px;
+    width: 90px;
+    height: 80px;
+}
+/* 왼어깨 */
+.s1 {
+    left: -80px;
+    border-radius: 50% 0 0 50%;
+}
+/* 오른어깨 */
+.s2 {
+    right: -80px;
+    border-radius: 0 50% 50% 0;
+}

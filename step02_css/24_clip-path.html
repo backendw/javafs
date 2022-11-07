@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clip-path</title>
+    <style>
+        /* https://bennettfeely.com/clippy/ */
+        .circle {
+            /* 반지름 at x y */
+            /* 소괄호 안에 값을 안쓰면 이미지를 전체를 채우는 원이 나옴. */
+            clip-path: circle(120px at 200px 150px);
+        }
+        .ellipse {
+            /* 가로크기 세로크기 at x y */
+            /* 소괄호 안에 값을 안쓰면 이미지를 전체를 채우는 타원이 나옴. */
+            clip-path: ellipse(239px 87px at 249px 120px);
+        }
+        .polygon {
+            /* x1 y1, x2 y2, x3 y3, ... */
+            clip-path: polygon(50% 10%, 10% 100%, 90% 100%);
+        }
+        .svg {
+            clip-path: url(#myClip);
+        }
+    </style>
+</head>
+<body>
+    <h1>클리핑</h1>
+    <img src="/assets/images/house2.jpg" alt="" class="circle">
+    <img src="/assets/images/house2.jpg" alt="" class="ellipse">
+    <img src="/assets/images/house2.jpg" alt="" class="polygon">
+    <img src="/assets/images/house2.jpg" alt="" class="svg">
+    <svg>
+        <defs>
+            <clippath id="myClip">
+                <circle cx="90" cy="100" r="40"></circle>
+                <circle cx="90" cy="200" r="70"></circle>
+            </clippath>
+        </defs>
+    </svg>
+</body>
+</html>
