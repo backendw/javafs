@@ -60,6 +60,19 @@
         .trs4 {
             transition: left ease-in 1s, background 1s 1s;
         }
+
+        input {
+            display: none;
+        }
+        label {background-color: green; display: inline-block; width: 100%;}
+        input:checked + .trs5 {
+            left:300px;
+            background: #000;
+        }
+        .trs5 {
+            transition: left ease-in 1s, background 1s 1s;
+        }
+
     </style>
 </head>
 <body>
@@ -74,5 +87,10 @@
     <div><span class="trs2"></span></div>
     <div><span class="trs3"></span></div>
     <div><span class="trs4"></span></div>
+    <div>
+        <label for="chk">나를 클릭해 보세요.</label>
+        <input type="checkbox" id="chk">
+        <span class="trs5"></span>
+    </div>
 </body>
 </html>
