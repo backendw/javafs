@@ -5,14 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transform</title>
+    <style>
+        div {
+            width: 110px;
+            margin: 20px;
+            border: 1px solid #000;
+        }
+        img {transition: 1s;}
+
+        .tf1:hover img {transform: translate(50px, 50px);}
+        .tf2:hover img {transform: translateX(50%);} /* %는 이미지 가로 크기 기준 */
+        .tf3:hover img {transform: translateY(50%);} /* %는 이미지 세로 크기 기준 */
+        .tf4:hover img {transform: scale(1.5, 1.5);}
+        .tf5:hover img {transform: scaleX(1.5);}
+        .tf6:hover img {transform: scaleY(1.5);}
+        .tf7:hover img {transform: rotate(800deg);}
+        .tf8:hover img {transform: rotateX(180deg);}
+        .tf9:hover img {transform: rotateY(180deg);}
+        .tf10:hover img {transform: skew(30deg, 30deg);}
+        .tf11:hover img {transform: skewX(-30deg);}
+        .tf12:hover img {transform: skewY(-30deg);}
+
+        /* 다중 지정 가능 */
+        .tf13:hover img {transform: translate(50px, 50px) scale(2) rotate(800deg);}
+
+        /* 
+            transform-origin: x축 y축;
+                - 기본값: 50% 50%
+                - 단위: %, px
+                - x축: left, right, center
+                - y축: top, bottom, center 
+        */
+        .tf14 img {transform-origin: 0 0;}
+        .tf14:hover img {transform: rotate(800deg);}
+
+        .tf15 {position: relative; height:110px;}
+        .tf15 span {position: absolute;}
+
+        .tf15 img {backface-visibility: hidden;}
+        .tf15 span:nth-of-type(1) img {transform: rotateY(0deg);}
+        .tf15 span:nth-of-type(2) img {transform: rotateY(180deg);}
+        .tf15:hover span:nth-of-type(1) img {transform: rotateY(180deg);}
+        .tf15:hover span:nth-of-type(2) img {transform: rotateY(360deg);}
+    </style>
 </head>
 <body>
     <h1>transform</h1>
-    <ul>
+    <ol>
         <li>translate(x위치, y위치)</li>
+        <li>translateX(x위치)</li>
+        <li>translateY(y위치)</li>
         <li>scale(가로크기, 세로크기)</li>
+        <li>scaleX(가로크기)</li>
+        <li>scaleY(세로크기)</li>
         <li>rotate(각도)</li>
+        <li>rotateX(각도)</li>
+        <li>rotateY(각도)</li>
         <li>skew(x각도, y각도)</li>
-    </ul>
+        <li>skewX(x각도)</li>
+        <li>skewY(y각도)</li>
+    </ol>
+    
+    <div class="tf1"><img src="/assets/images/farmhannong/icon_farming_01.png" alt="벼"></div>
+    <div class="tf2"><img src="/assets/images/farmhannong/icon_farming_02.png" alt="사과"></div>
+    <div class="tf3"><img src="/assets/images/farmhannong/icon_farming_03.png" alt="배"></div>
+    <div class="tf4"><img src="/assets/images/farmhannong/icon_farming_04.png" alt="감"></div>
+    <div class="tf5"><img src="/assets/images/farmhannong/icon_farming_05.png" alt="감귤"></div>
+    <div class="tf6"><img src="/assets/images/farmhannong/icon_farming_06.png" alt="복숭아"></div>
+    <div class="tf7"><img src="/assets/images/farmhannong/icon_farming_07.png" alt="포도"></div>
+    <div class="tf8"><img src="/assets/images/farmhannong/icon_farming_08.png" alt="고추"></div>
+    <div class="tf9"><img src="/assets/images/farmhannong/icon_farming_09.png" alt="배추"></div>
+    <div class="tf10"><img src="/assets/images/farmhannong/icon_farming_10.png" alt="마늘"></div>
+    <div class="tf11"><img src="/assets/images/farmhannong/icon_farming_11.png" alt="양파"></div>
+    <div class="tf12"><img src="/assets/images/farmhannong/icon_farming_12.png" alt="파"></div>
+    <div class="tf13"><img src="/assets/images/farmhannong/icon_farming_13.png" alt="토마토"></div>
+    
+    <h2>transform-origin: x위치 y위치;</h2>
+    <div class="tf14"><img src="/assets/images/farmhannong/icon_farming_14.png" alt="딸기"></div>
+    
+    <h2>backface-visibility</h2>
+    <div class="tf15">
+        <span><img src="/assets/images/farmhannong/icon_farming_14.png" alt="딸기"></span>
+        <span><img src="/assets/images/farmhannong/icon_farming_15.png" alt="수박"></span>
+    </div>
+    
+    <p>출처: <a href="https://www.farmhannong.com/kor/main/index.do" target="_blank">https://www.farmhannong.com/kor/main/index.do</a></p>
 </body>
 </html>
