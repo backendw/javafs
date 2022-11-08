@@ -103,3 +103,14 @@
         transform: rotate(-140deg);
     }
 }
+
+/* 입 */
+.mouth {
+    animation: mouthAni .05s linear 6s infinite alternate;
+}
+/* 입 애니 키프레임 */
+@keyframes mouthAni {
+    to {
+        transform:scaleY(.5);
+    }
+}
