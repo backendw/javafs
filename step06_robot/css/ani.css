@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* 로봇PJ 애니메이션 CSS - ani.css */
+
+/* 로고 */
+.logo {
+    top: calc(50% - 102px);
+    left: calc(50% - 102px);
+    /* 연산자 앞뒤는 띄어쓴다. */
+    transform: scale(2);
+    animation: logoAni 2s ease-in-out 1s forwards,
+    logoAni2 .5s ease-in-out 3s infinite alternate;
+}
+/* 로고애니 키프레임 */
+@keyframes logoAni {
+    /* 초기 설정이 from과 같으면 from 생략 가능 */
+    80% {
+        top:50px;
+        left:50px;
+        transform: scale(1) rotate(0deg);
+    }    
+    100% {
+        top:50px;
+        left:50px;
+        transform: scale(1) rotate(20deg);
+    }    
+}
+
+/* 흔들기 로고애니 키프레임 */
+@keyframes logoAni2 {
+    0% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+/* 로봇머리 */
+.head {
+    top: -500px; 
+    /* 높이 값이 있어야 top을 %로 지정할 수 있다. */
+    animation: headAni 1s ease-out 2.5s forwards;
+}
+/* 로봇머리 등장 키프레임 */
+@keyframes headAni {
+    to {
+        top:0;
+    }
+}
+/* 로봇몸 */
+.body {
+    left: -100%;
+    animation: bodyAni 1s ease-out 2s forwards;
+}
+/* 로봇몸 등장 키프레임 */
+@keyframes bodyAni {
+    to {
+        left:0;
+    }
+}
+
+/* 설명링크 */
+.link {
+    opacity: 0;
+    animation: opaAni 1s linear 4.5s forwards;
+}
+/* 탑버튼 */
+.btnTop {
+    opacity: 0;
+    animation: opaAni 1s linear 5s forwards;
+}
+/* TV */
+.tv {
+    opacity: 0;
+    animation: opaAni 1s linear 4s forwards;
+}
+
+/* 설명링크, 위로이동버튼, TV 등장 공통 키프레임 */
+@keyframes opaAni {
+    20% {opacity: 1;}    
+    40% {opacity: 0;}    
+    60% {opacity: 1;}    
+    80% {opacity: 0;}    
+    100% {opacity: 1;}    
+}
+
+/* 오른팔 */
+.a2 {
+    transform: rotate(0deg);
+    transform-origin: center 20px;
+    animation: a2Ani .4s ease-in-out 6s forwards,
+    a2Ani2 .2s linear 6.4s infinite alternate;
+}
+/* 오른팔 올리기 애니 */
+@keyframes a2Ani {
+    to {
+        transform: rotate(-150deg);
+    }   
+}
+/* 팔흔들기 애니 */
+@keyframes a2Ani2 {
+    to {
+        transform: rotate(-140deg);
+    }
+}
