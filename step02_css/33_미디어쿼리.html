@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 뷰포트 설정: meta:vp 탭 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹</title>
+    <!-- <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css"> -->
+    <style>
+        /* 
+            @media not|only 미디어유형 and (표현식) {
+                CSS-Code;
+            } 
+            미디어유형: all, print, screen, speech
+            표현식: 
+                - max-width: 값 -> 최대 크기
+                - min-width: 값 -> 최소 크기
+                - orientation:portrait -> 세로 방향
+                - orientation:landscape -> 가로 방향
+            연산자:
+                - and -> 그리고
+        */
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            body {background:lightblue;}
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+            body {background: lightgreen;}
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            body {background: lightgray;}
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            body {background: lightpink;}
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+            body {background: lightcoral;}
+        }
+    </style>
+</head>
+<body>
+    <h1>미디어 쿼리와 뷰포트</h1>
+    <h2>뷰포트(Viewport)</h2>
+    <p>웹 페이지에서 사용자가 볼 수 있는 영역입니다.</p>
+    <p>width=device-width는 페이지 너비가 장치의 화면 너비를 따르도록 설정합니다(장치에 따라 다름). initial-scale=1.0 부분은 브라우저에서 페이지를 처음 로드할 때 초기 확대/축소 수준을 설정합니다.</p>
+
+    <h2>미디어 쿼리(Media Query)</h2>
+    <p>미디어 쿼리를 사용하는 것은 데스크톱, 랩톱, 태블릿 및 휴대폰(예: iPhone 및 Android 휴대폰)에 맞춤형 스타일 시트를 제공하는 데 널리 사용되는 기술입니다.</p>
+    <p>일반적인 장치 중단점: 600이하, 600이상, 768이상, 992이상, 1200이상</p>
+    <p>브라우저의 방향(가로, 세로)에 따라 페이지 레이아웃을 변경할 수도 있습니다.</p>
+    <p>미디어 쿼리로 요소 숨기기(display:none)</p>
+    <p>다양한 화면 크기에서 요소의 글꼴 크기를 변경할 수도 있습니다.</p>
+</body>
+</html>

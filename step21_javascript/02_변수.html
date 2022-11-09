@@ -4,11 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>변수</title>
 </head>
 <body>
     <h1>변수</h1>
     <p>데이터를 저장하기 위한 컨테이너입니다(데이터 값 저장).</p>
     <p>변수 선언 키워드는 var, let(값이 변경될 가능성 있다면), const가 있다.</p>
+    <p>변수는 고유한 이름으로 식별 되어야 합니다. 이러한 고유한 이름을 식별자라고 합니다.</p>
+    <h2>변수(고유 식별자)의 이름을 구성하는 일반적인 규칙</h2>
+    <ul>
+        <li>이름에는 문자, 숫자, 밑줄 및 달러 기호가 포함될 수 있습니다.</li>
+        <li>이름은 문자로 시작해야 합니다.</li>
+        <li>이름은 $ 및 _로 시작할 수도 있습니다.</li>
+        <li>이름은 대소문자를 구분합니다(y와 Y는 다른 변수임).</li>
+        <li>예약어(예: JavaScript 키워드)는 이름으로 사용할 수 없습니다.</li>
+    </ul>
+
+    <h2>명명 규칙</h2>
+    <ul>
+        <li>camelCase: JavaScript 자체, jQuery 및 기타 JavaScript 라이브러리에서 사용됩니다.</li>
+        <li>PascalCase: 종종 C 프로그래머가 선호합니다.</li>
+        <li>snake_case: 많은 프로그래머는 특히 SQL 데이터베이스에서 밑줄(under_scores)을 사용하는 것을 선호합니다. PHP 문서에서 자주 사용됩니다.</li>
+        <li>하이픈은 빼기 시도로 오인될 수 있습니다. JavaScript 이름에는 하이픈을 사용할 수 없습니다.</li>
+        <li>$ 기호로 이름을 시작하지 마십시오. 많은 JavaScript 라이브러리 이름과 충돌하게 됩니다.</li>
+    </ul>
+    
+    <h2>템플릿 리터럴(Template Literals, Back-Tics 구문)</h2>
+    <p>따옴표("") 대신 역따옴표(``)를 사용하여 문자열을 정의합니다.</p>
+    <p>문자열 내에서 작은따옴표와 큰따옴표를 모두 사용할 수 있습니다.</p>
+    <p>여러 줄 문자열을 허용합니다.</p>
+    <p>문자열에 변수를 허용합니다. 변수 또는 표현식을 실제 값으로 자동 교체하는 것을 문자열 보간(Interpolation) 이라고 합니다 .</p>
+
+    <script>
+        var a = 123;
+        var b = '10';
+        var c = '십';
+        var d = true;
+
+        // 하나의 명령문에서 많은 변수를 선언할 수 있습니다. 명령문을 시작하고 쉼표(,)로 변수를 구분합니다.
+        var a = 123, b = '10', c = "십", d = true;
+
+        document.write(a + '은 숫자 데이터이다. ' + b + '은 문자열 데이터이다. ' + c + '은 문자열 데이터이다. ' + d + '은 부울 데이터이다.<br>');
+
+        document.write(`${a}은 숫자 데이터이다. ${b}은 '문자열' 데이터이다. ${c}은 "문자열" 데이터이다. ${d}은 부울 데이터이다.<br>`);
+
+        // 변수 재 할당
+        a = 321;
+        b = '100';
+        c = '백';
+        d = false;
+        
+        document.write(`${a}은 숫자 데이터이다. 
+            ${b}은 문자열 데이터이다. 
+            ${c}은 문자열 데이터이다. 
+            ${d}은 부울 데이터이다.`);
+    </script>
 </body>
 </html>
