@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위</title>
+    <style>
+        html {font-size:10px;}
+        body {font-size:15px;}
+        .grandparent {font-size:0.5em;} /* 7.5px */
+        .parent {font-size:2em;} /* 15px */
+
+        div {border:1px dotted red; width:500px;}
+
+        .my1 {font-size:30px;}
+        .my2 {font-size:2em;} /* 30px */
+        .my3 {font-size:200%;} /* 30px */
+        .my4 {font-size:3rem;} /* 30px */
+        /* min(값1, 값2, ...) -> 작은 값으로 지정 */
+        .my5 {font-size: min(3vw, 30px); width: 100%;}
+        .my6 {font-size:3vh; width: 50vmax;}
+        .my7 {font-size:3vmin; width: 50vmax;}
+        /* max(값1, 값2, ...) -> 큰 값으로 지정 */
+        .my8 {font-size: min(max(3vmax, 30px), 30px); width: 30vmax;}
+    </style>
+</head>
+<body>
+    <h1>단위</h1>
+    <h2>절대 단위</h2>
+    <p>72ppi 일때 12pt = 12px</p>
+    <p>96ppi 일때 12pt = 16px (12 * 96/72 = 16)</p>
+    <h2>상대 단위</h2>
+    <p>em, %: 부모 글자 크기의 배수</p>
+    <p>%: em 단위를 백분율로 표시</p>
+    <p>rem(root em): html에 지정한 글자 크기의 배수</p>
+    <p>vw: 브라우저 창 크기의 가로 크기를 기준한 % 비율</p>
+    <p>vh: 브라우저 창 크기의 세로 크기를 기준한 % 비율</p>
+    <p>vmin: 브라우저 창 크기의 가로/세로 중 작은 크기를 기준한 % 비율</p>
+    <p>vmax: 브라우저 창 크기의 가로/세로 중 큰 크기를 기준한 % 비율</p>
+
+    <div class="grandparent">
+        <div class="parent">
+            <div class="my1">글자 크기px</div>
+            <div class="my2">글자 크기em</div>
+            <div class="my3">글자 크기%</div>
+            <div class="my4">글자 크기rem</div>
+            <div class="my5">글자 크기vw</div>
+            <div class="my6">글자 크기vh</div>
+            <div class="my7">글자 크기vmin</div>
+            <div class="my8">글자 크기vmax</div>
+        </div>
+    </div>
+</body>
+</html>
