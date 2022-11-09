@@ -3,12 +3,132 @@
 /* 상단 영역, 하단 영역의 반복 디자인 */
 
 
-/* header */
+/*------------------ header ------------------*/
+/* 겉박스 */
+#top {
+    position: relative;
+    background-color: #fff;
+}
+/* 속박스 */
 .top {
     height: 128px;
 }
+/* 로고 */
+.logo {
+    width: 100px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+/* 로고 이미지 */
+.logo img {
+    width: 100px;
+}
+/* GNB */
+.gnb {
+    width: 574px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+/* GNB 상위메뉴 li */
+.gnb>ul>li {
+    padding: 0 15px;
+}
+/* GNB 상위메뉴 a */
+.gnb>ul>li>a {
+    position: relative;
+    display: block;
+    font-size: 17px;
+    line-height: 2.5;
+}
+/* 가상요소로 하단바 만들기 */
+.gnb>ul>li>a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom:0;
+    width: 0;
+    height: 3px;
+    background-color: red;
+    transition: width .2s;
+}
+/* 마우스 오버시 하단바 보이기 */
+.gnb>ul>li>a:hover::after {
+    width: 100%;
+}
+/* SNS */
+.tmenu {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
 
-/* footer */
-.foot {
+/*------------------ footer -----------------*/
+/* 겉박스 */
+#info {
+    background-color: rgba(255, 255, 255, 0.712);
+}
+
+/* 속박스 */
+.info {
+    position: relative;
     height: 241px;
+}
+/* 하단링크 */
+.blink {
+    padding-top: 5px;
+}
+/* 하단링크 리스트 */
+.blink ul {
+    width:804px;
+    margin: 0 auto;
+}
+
+.blink li {
+    float: left;
+    padding: 0 15px;
+}
+/* 글자셋팅 */
+.blink a {
+    color: #222;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 2.8;
+}
+/* 마우스 오버시 a */
+.blink a:hover {
+    color: red;
+    text-decoration: underline;
+}
+/* 회사정보 */
+.addr {
+    padding: 10px;
+}
+.addr address {
+    font-size: 14px;
+    font-style: normal; /* address 태그의 기본 이탤릭 해제 */
+    text-align: center;
+    line-height: 2;
+    width: 804px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 4px double #222;
+}
+
+/* 하단로고 */
+.blogo {
+    text-align: center;
+}
+
+/* 바로가기 */
+.brand {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+/* 선택박스 */
+#sel {
+    color: #222;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px;
 }

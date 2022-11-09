@@ -9,8 +9,9 @@
 
 /* 공사중 표시 */
 body * {
-    outline: 2px dashed gray;
+    outline: 1px dashed gray;
 }
+
 body {
     background: 
     url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
