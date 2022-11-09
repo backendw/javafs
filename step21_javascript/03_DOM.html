@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        function fn() {
+            // .innerHTML - HTML 요소를 가져오거나 변경한다.
+            document.getElementById('p1').innerHTML = '<p>item(n) - n번째 요소</p>';
+    
+            var p1 = document.getElementsByClassName('p1').item(0);
+            p1.style.width = '500px';
+            p1.style.color = 'red';
+            p1.style.border = '1px dotted red';
+            p1.style.lineHeight = 5;
+            p1.style.fontSize = '20px';
+            p1.style.transition = '1s';
+            p1.style.transform = 'scale(1.2) translate(43px)';
+
+            // .style.property - 요소의 스타일 속성 값을 반환한다.
+            document.getElementsByTagName('p').item(0).style.fontStyle = 'italic';
+            // document.getElementsByTagName('body').item(0).style.background = 'lightblue';
+            document.body.style.background = 'lightblue';
+            // .attribute - 요소의 스타일 속성 값을 반환한다.
+            document.getElementsByClassName('img1').item(0).src = '/assets/images/facebook.png'
+        }
+    </script>
+</head>
+<body>
+    <h1>HTML DOM</h1>
+    <p onclick="fn()">클릭해 보세요.</p> 
+
+    <h2>DOM(Document Object Model)</h2>
+    <p>HTML을 위한 표준 객체 모델이자 프로그래밍 인터페이스 입니다.</p>
+    <p>HTML 요소를 가져오고, 변경하고, 추가하거나, 삭제하는 방법에 대한 표준입니다.</p>
+
+    <h2>객체</h2>
+    <p>document - DOM의 최상위 객체</p>
+    
+    <h2>메서드</h2>
+    <p>getElementById('아이디명') - ID로 HTML 요소 찾기</p>
+    <p>getElementsByClassName('클래스명') - 클래스 이름으로 HTML 요소 찾기</p>
+    <p>getElementsByTagName('태그명') - 태그 이름으로 HTML 요소 찾기</p>
+    <div id="p1"></div>
+    
+    <h2>속성</h2>
+    <p>element.innerHTML = HTML 내용</p>
+    <p class="p1">element.style.property = CSS 스타일 값</p>    
+    <p><img src="/assets/images/naverlogo.png" alt="" class="img1">element.attribute = 'HTML 속성 값'</p>    
+</body>
+</html>
