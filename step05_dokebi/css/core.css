@@ -55,3 +55,10 @@ body {
     display:block;
     clear: both;
  }
+
+ /* IR 클래스 */
+ /* 배경이미지 설명 클래스 (Image Replacement) */
+ .ir {
+    display: block;
+    text-indent: -9999em;
+ }

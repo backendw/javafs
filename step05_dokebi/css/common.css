@@ -6,11 +6,11 @@
 /*------------------ header ------------------*/
 /* 겉박스 */
 #top {
-    position: relative;
     background-color: #fff;
 }
 /* 속박스 */
 .top {
+    position: relative;
     height: 128px;
 }
 /* 로고 */
@@ -60,6 +60,42 @@
     position: absolute;
     top: 20px;
     right: 0;
+}
+.sns {
+    margin-top: -5px;
+}
+.sns li {
+    width: 30px;
+    height: 30px;
+    background: url(../images/icons.png) no-repeat;
+}
+/* 트위터 */
+.sns li:nth-child(1) {
+    background-position: 0 0;
+}
+.sns li:nth-child(1):hover {
+    background-position: 0 -30px;
+}
+/* 인스타그램 */
+.sns li:nth-child(2) {
+    background-position: -30px 0;
+}
+.sns li:nth-child(2):hover {
+    background-position: -30px -30px;
+}
+/* 페이스북 */
+.sns li:nth-child(3) {
+    background-position: -60px 0;
+}
+.sns li:nth-child(3):hover {
+    background-position: -60px -30px;
+}
+
+/* sns a요소 확장 */
+.sns a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 /*------------------ footer -----------------*/
