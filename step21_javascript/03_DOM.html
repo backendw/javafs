@@ -24,12 +24,14 @@
             // document.getElementsByTagName('body').item(0).style.background = 'lightblue';
             document.body.style.background = 'lightblue';
             // .attribute - 요소의 스타일 속성 값을 반환한다.
-            document.getElementsByClassName('img1').item(0).src = '/assets/images/facebook.png'
+            document.getElementsByClassName('p2').item(0).getElementsByTagName('img').item(0).src = '/assets/images/facebook.png';
         }
 
         function fn2(para1, para2) {
             document.querySelector('.myH2').style.fontSize = para1 + 'px';
             document.querySelector('.myH2').style.color = para2;
+            // document.querySelectorAll('h2').item(4).style.border = '1px dotted red';
+            document.querySelectorAll('h2')[4].style.border = '1px dotted red';
         }
     </script>
 </head>
@@ -49,13 +51,15 @@
     <p>getElementById('아이디명') - ID로 HTML 요소 찾기</p>
     <p>getElementsByClassName('클래스명') - 클래스 이름으로 HTML 요소 찾기</p>
     <p>getElementsByTagName('태그명') - 태그 이름으로 HTML 요소 찾기</p>
-    <p>querySelector('선택자') - 선택자로 HTML 요소 찾기</p>
+    <p>querySelector('선택자') - 선택자로 HTML 하나의 요소 찾기</p>
+    <p>querySelectorAll('선택자') - 선택자로 HTML 모든 요소 찾기</p>
     <div id="p1"></div>
     
     <h2>속성</h2>
     <p>element.innerHTML = HTML 내용</p>
     <p class="p1">element.style.property = CSS 스타일 값</p>    
-    <p>element.attribute = 'HTML 속성 값'<img src="/assets/images/naverlogo.png" alt="" class="img1" style="vertical-align:middle;" on></p> 
+    <p class="p2" >element.attribute = 'HTML 속성 값'<img src="/assets/images/naverlogo.png" alt="로고" style="vertical-align:middle;"></p>
+    <p>length - 개수</p> 
     
     <h2 class="myH2">HTML 이벤트 속성</h2>
     <p onclick="fn2(24, 'black');">onclick - 사용자가 마우스를 클릭할 때</p>
