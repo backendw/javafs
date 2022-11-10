@@ -37,7 +37,7 @@
 .gnb>ul>li>a {
     position: relative;
     display: block;
-    font-size: 17px;
+    font-size: 1.7rem;
     line-height: 2.5;
 }
 /* 가상요소로 하단바 만들기 */
@@ -60,6 +60,9 @@
     position: absolute;
     top: 20px;
     right: 0;
+}
+.tmenu>ul>li>a {
+    font-size: 1.5rem;
 }
 .sns {
     margin-top: -5px;
@@ -127,7 +130,7 @@
 .blink a {
     color: #222;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 2.8;
 }
 /* 마우스 오버시 a */
@@ -140,7 +143,7 @@
     padding: 10px;
 }
 .addr address {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal; /* address 태그의 기본 이탤릭 해제 */
     text-align: center;
     line-height: 2;
@@ -165,6 +168,6 @@
 #sel {
     color: #222;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     padding: 8px;
 }

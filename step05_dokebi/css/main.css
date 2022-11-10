@@ -101,18 +101,18 @@ body {
 /* 캐릭터 설명 타이틀 */
 .cd h3 {
     font-family: 'Gugi', cursive;
-    font-size: 24px;
+    font-size: min(1.9vw, 24px);
     font-weight: normal;
-    padding: 15px 10px 5px;
+    padding: 15px min(1vw, 10px) 5px;
     letter-spacing: -1px;
 }
 
 /* 캐릭터 설명 문단 */
 .cd p {
     font-family: 'Single Day','ZCOOL KuaiLe', cursive;
-    font-size: 18px;
+    font-size: min(1.3vw, 18px);
     line-height: 1.6;
-    padding: 10px;
+    padding: min(2vw, 10px);
     text-align: justify;
     /* word-break: break-all; -> 영문자일 경우 사용 */
 }
