@@ -9,7 +9,7 @@
 <body>
     <h1>조건문</h1>
     <h2>switch case</h2>
-    <h3 class="info">국번안내</h3>
+    <h3 id="info">국번안내</h3>
     <label for="local">지역명 입력:</label>
     <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요!" maxlength="10" onkeypress="if(event.keyCode === 13) local()">
     <button class="sbtn" onclick="local()">국번문의</button>
@@ -18,8 +18,28 @@
         /* 선언적 함수 */
         function local(){
             var tg = document.querySelector('#local');
+            var info = document.querySelector('#info');
+            var txt = tg.value;
+            // 요소.value -> 요소의 value 값 읽기/쓰기
+            var msg;
 
-            console.log(tg);
+            switch(txt) {
+                case '서울': msg = '02'; break;
+                case '경기': msg = '031'; break;
+                case '인천': msg = '032'; break;
+                case '제주': msg = '064'; break;
+                case '충남': msg = '041'; break;
+                case '경남': msg = '055'; break;
+                default: msg = 'esc';
+            }
+
+            if (msg === 'esc') msg = '등록되지 않은 지역입니다!';
+            else msg = `${txt}의 지역번호는 ${msg}입니다!`;
+            // if문의 실행문이 1개이면 중괄호 생략가능!
+
+            info.innerText = msg;
+
+            console.log('메시지:',msg);
         }
     </script>
 </body>
