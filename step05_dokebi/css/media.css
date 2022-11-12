@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* 도깨비 PJ 미디어쿼리 CSS - media.css */
+
+/* 1200px 이하 */
+@media screen and (max-width:1200px) {
+    /* 탑메뉴 가로 크기 화면 맞춤 */
+    .tmenu {
+        width: 100%;
+    }
+}
+/* 1070px 이하 */
+@media screen and (max-width:1070px) {
+    /* 탑메뉴 가로 크기 화면 맞춤 */
+    html {
+        font-size: 8px;
+    }
+    .gnb {
+        width: 495px;
+        margin-top: 34px;
+    }
+    .blink ul {
+        max-width:680px;
+    }
+    .brand {
+        display: none;
+    }
+
+    /* 캐릭터 박스 한줄에 2개씩 */
+    .cat {
+        width: 49%;
+    }
+    /* 캐릭터 부모 박스 */
+    .cbx  {
+        margin-top: 100px;
+    }
+    /* 캐릭터 오버시 이미지박스 */
+    .cat:hover .ci {
+        margin-top: 0;
+    }
+    /* 캐릭터 오버시 설명 위로 */
+    .cat:hover {
+        z-index: 1;
+    }
+    /* 설명박스 타이틀 */
+    .cd h3 {
+        font-size: 3vw;
+    }
+    /* 설명박스 p요소 */
+    .cd p {
+        font-size: 2vw;
+    }
+}
+/* 870px 이하 */
+@media screen and (max-width:870px) {
+    /* 없어질 요소들 */
+    .tmenu, .gnb, .blink {
+        display: none;
+    }
+    /* 보여질 요소 */
+    .ham {
+        display: block;
+    }
+    /* 상단 영역 높이 */
+    .top {
+        height: 80px;
+    }
+    /* 캐릭터 부모박스 */
+    .cbx {
+        margin-top: 20px;
+    }
+    /* 캐릭터박스 한 줄에 하나씩 */
+    .cat {
+        width: 99%;
+    }
+    /* 설명박스 자리차지하는 포지션으로 */
+    .cd {
+        position: static;
+    }
+    /* 설명박스 타이틀 */
+    .cd h3 {
+        font-size: 4vw;
+    }
+    /* 설명박스 p요소 */
+    .cd p {
+        font-size: 3vw;
+    }
+    /* 하단 영역 */
+    .info {
+        height: auto;
+        padding-bottom: 20px;
+    }
+}
