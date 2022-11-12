@@ -5,8 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    
+    <!-- 상단영역 -->
+    <div id="top">
+        <header class="top ibx">
+            <!-- logo -->
+            <h1 class="tit">CGV 예고편 상영관</h1>
+            <!-- GNB -->
+            <nav class="gnb"></nav>
+        </header>
+    </div>
+    <!-- 메인영역 -->
+    <div id="cont">
+        <main class="cont ibx">
+            <!-- 스크린박스 -->
+            <div id="screen">
+                <!-- 유튜브 아이프레임 width="893" height="502" -->
+                <!-- 
+                    https://developers.google.com/youtube/player_parameters
+                    유튜브url?키=값&키=값&... 
+                    자동재생: autoplay=1
+                    소리없음: mute=1
+                    -> 자동재생하려면 소리없음 지정
+                    반복재생: loop=1
+                    반복재생리스트: playlist=동영상ID
+                    -> 반복재생하려면 반복재생리스트 지정
+                    
+                    유튜브로고표시제거: modestbranding=1
+                    동영상 플레이어 컨트롤을 표시제거: controls=0
+                    전체 화면 버튼이 플레이어에 표시제거: fs=0
+                    특정 시간(단위: 60초) 이후에 동영상 재생: start=60
+                    동영상 재생을 중지해야 할 시간(단위: 60초): end=60
+                    자막 해제: cc_load_policy=0
+                    동영상 특수효과가 기본적으로 표시해제: iv_load_policy=3
+
+                -->
+                <iframe src="https://www.youtube.com/embed/2hnkUpo_2yg?autoplay=1&mute=1&loop=1&playlist=2hnkUpo_2yg"></iframe>
+            </div>
+        </main>
+    </div>
+    <!-- 하단영역 -->
+    <div id="info">
+        <footer class="info ibx">
+
+        </footer>
+    </div>
 </body>
 </html>
