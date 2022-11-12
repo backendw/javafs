@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CGV PJ 공통 클래스/웹폰트 CSS - core.css */
+
+/* 웹폰트 CDN */
+/* Cute Font, Jua, Audiowide 체 */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cute+Font&family=Jua&display=swap');
+/* 
+    font-family: 'Audiowide', cursive;
+    font-family: 'Cute Font', cursive;
+    font-family: 'Jua', sans-serif;
+*/
+
+html {
+   font-size: 10px;
+}
+
+/* 공통 클래스 */
+
+/* inbox */
+.ibx {
+    max-width:1200px;
+    margin:0 auto;
+}
+
+/* 스크롤바 디자인 클래스 */
+/* 밴더사명 접두어
+    -webkit- (크롬, 사파리)
+    -ms-(IE)
+    -o-(오페라)
+    -moz-(파이어폭스)
+ */
+ /* 전체 스크롤바 크기 변경 */
+ .scbar::-webkit-scrollbar {
+    width: 7px;
+ }
+ /* 스크롤바 */
+ .scbar::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 5px;
+ }
+ /* 스크롤바 트랙 */
+ .scbar::-webkit-scrollbar-track {
+    background-color: #ddd;
+    border-radius: 5px;
+ }
+/* float 셋팅 클래스 */
+.clearfix > li {
+    float:left;
+}
+ /* float설정 지우기 클래스 */
+ .clearfix::after {
+    content: '';
+    display:block;
+    clear: both;
+ }
+
+ /* IR 클래스 */
+ /* 배경이미지 설명 클래스 (Image Replacement) */
+ .ir {
+    display: block;
+    text-indent: -9999em;
+ }

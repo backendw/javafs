@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CGV PJ 초기화 CSS - reset.css */
+/* 기본 셋팅된 요소 초기화 */
+
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,figure,p,blockquote {
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    list-style:none;
+}
+a {
+    color:#000;
+    text-decoration: none;
+}
+img {
+    border:none;
+    vertical-align: top;
+}
+
+/* heading 요소 글자 크기 리셋(root에 일치) */
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    /* html의 기본 글자 크기(16px)와 일치
+    %글자 단위는 em과 같으므로 만약 부모박스에
+    글자크기가 지정되면 그 크기를 기준으로 한다. */
+}
