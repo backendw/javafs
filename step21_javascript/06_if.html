@@ -13,6 +13,9 @@
             width:322px;
             height:322px;
             background:url(/assets/images/ifshow.jpg);
+            background-position: 322px 0;
+            transform: scale(.2);
+            transition:.3s;
         }
     </style>
 </head>
@@ -20,9 +23,9 @@
     <h1>조건문</h1>
     <h2>if문</h2>
     <h3 id="jexp">평가출력</h3>
-    <div id="'jshow"></div>
+    <div id="jshow"></div>
     <label for="jumsu">점수입력:</label>
-    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3">
+    <!-- event.keyCode 값은 https://www.w3schools.com/charsets/ref_html_ascii.asp -->    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" onkeypress="if(event.keyCode === 13) jumsu();">
     <button class="sbtn" onclick="jumsu();">평가하기</button>
 
     <script>
@@ -31,6 +34,29 @@
             var jexp = document.querySelector('#jexp');
             var jshow = document.querySelector('#jshow');
             var score = jumsu.value;
+
+            /* 숫자 여부 판별 */
+            if (isNaN(score)) {
+                jexp.innerText = '숫자를 입력하세요!';
+                /* 글자색 초기화 */
+                jexp.style.color = '#000';
+                /* 칭찬스티커 초기화 */
+                jshow.style.backgroundPosition = '322px 0';
+                /* 입력창에 내용 지우기 */
+                jumsu.value = '';
+                /* 입력창에 포커스 주기 */
+                jumsu.focus();
+
+                /* if 안에서 함수를 빠져나가는 명령 */
+                return;
+            }
+
+            /* 숫자 범위 판별하기 */
+            else if (score < 0 || score > 100) {
+                jexp.innerText = '0 이상 100 이하의 숫자만 입력하세요!';
+                return;
+            }
+
             // value 속성은 입력된 값을 읽기/쓰기
             // 평가 결과 메시지 변수
             var msg;
