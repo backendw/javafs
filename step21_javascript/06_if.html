@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>조건문</h1>
+    <h2>if문</h2>
+    <h3 id="jexp">평가출력</h3>
+    <div id="'jshow"></div>
+    <label for="jumsu">점수입력:</label>
+    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3">
+    <button class="sbtn" onclick="jumsu();">평가하기</button>
+
+    <script>
+        function jumsu(){
+            var jumsu = document.getElementById('jumsu');
+            var jexp = document.querySelector('#jexp');
+            var jshow = document.querySelector('#jshow');
+            var score = jumsu.value;
+            // value 속성은 입력된 값을 읽기/쓰기
+            var msg;
+
+            if (score >= 90) {
+                msg = "매우잘함";
+            }
+            else if (score >= 80) {
+                msg = "잘함";
+            }
+            else if (score >= 70) {
+                msg = "보통";
+            }
+            else if (score >= 60) {
+                msg = "노력요함";
+            }
+            else {
+                msg = "재시험";
+            }
+
+            jexp.innerText = '평가결과는 ' + msg;
+
+        }
+    </script>
+</body>
+</html>
