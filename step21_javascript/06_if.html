@@ -8,14 +8,14 @@
     <style>
         #jshow {
             position: absolute;
-            top:-19px;
+            top: -35px;
             left:133px;
             width:322px;
             height:322px;
-            background:url(/assets/images/ifshow.jpg);
+            background:url(/assets/images/ifshow.jpg) no-repeat;
             background-position: 322px 0;
-            transform: scale(.2);
-            transition:.3s;
+            transform: scale(.3);
+            transition:.4s ease-out;
         }
     </style>
 </head>
@@ -35,9 +35,11 @@
             var jshow = document.querySelector('#jshow');
             var score = jumsu.value;
 
-            /* 숫자 여부 판별 */
-            if (isNaN(score)) {
-                jexp.innerText = '숫자를 입력하세요!';
+            /* 초기화 함수 */
+            // 변수에 익명함수 function(){}을 할당함!
+            // 변수에 할당한 함수일 경우 바로 호출하려면
+            // 할당된 함수가 호출코드 보다 위에 있어야함!
+            var initFn = function(){
                 /* 글자색 초기화 */
                 jexp.style.color = '#000';
                 /* 칭찬스티커 초기화 */
@@ -46,7 +48,12 @@
                 jumsu.value = '';
                 /* 입력창에 포커스 주기 */
                 jumsu.focus();
+            };
 
+            /* 숫자 여부 판별 */
+            if (isNaN(score)) {
+                jexp.innerText = '숫자를 입력하세요!';
+                initFn();
                 /* if 안에서 함수를 빠져나가는 명령 */
                 return;
             }
@@ -54,6 +61,7 @@
             /* 숫자 범위 판별하기 */
             else if (score < 0 || score > 100) {
                 jexp.innerText = '0 이상 100 이하의 숫자만 입력하세요!';
+                initFn();
                 return;
             }
 
