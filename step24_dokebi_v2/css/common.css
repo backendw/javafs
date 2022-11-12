@@ -9,6 +9,11 @@
     background-color: #fff;
     /* 하단 구분선 */
     border-bottom: 1px solid #ccc;
+    /* 넘치는 자식 요소 숨기기 */
+    overflow:hidden;
+    /* 보통의 static 박스의 자식 요소가 바깥으로 나가서
+    하위 박스에 영향을 미칠경우 넘치는 요소 숨기기 설저으로 이를 막을 수 있다.
+    앱솔루트 자식 요소는 부모자격이 없는 경우 이에 영향받지 않는다. */
 }
 /* 속박스 */
 .top {
