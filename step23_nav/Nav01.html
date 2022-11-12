@@ -2,7 +2,7 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>유형1. 가로네비 서브별 드롭다운 세로형</title>
   <style>
     /* 초기화 */
@@ -132,24 +132,19 @@
 
     /* 서브메뉴 */
     .smenu{
-      /* 앱솔루트 포지션 */
       position: absolute;
       width: 200px;
 
-      /* 메뉴 숨기기 
-      - 높이값0,overflow:hidden */
+      /* 메뉴 숨기기 */
       height: 0;
       overflow: hidden;
       /* 주의: 숨기는 박스에 상하패딩이
        있으면 완전히 숨길 수 없다! */
 
-      /* 배경색 
-      - 상위메뉴 오버시 배경색과 동일 */
+      /* 배경색 */
       background-color: darkblue;
       /* 둥근모서리 - 양쪽아래만 */
       border-radius: 0 0 5px 5px;
-
-      /* 트랜지션: 속시이지 */
       transition: height .4s ease-out;
     }
 
@@ -165,23 +160,17 @@
     }
 
     /* 서브메뉴 ol */
-    .smenu ol{
-      /* 패딩 */
+    .smenu ol {
       padding: 15px;
     }
 
     /* 서브메뉴 a */
-    .smenu a{
-      /* a요소 확장 */
+    .smenu a {
       display: block;
-
-      /* 글자셋팅 */
       color: lightskyblue;
       text-decoration: none;
       font-size: 14px;
       line-height: 35px;
-
-      /* 트랜지션: 속시이지 */
       transition: .2s;
     }
     /* 서브메뉴 오버시 */

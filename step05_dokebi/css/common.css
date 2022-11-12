@@ -7,10 +7,13 @@
 /* 겉박스 */
 #top {
     background-color: #fff;
+    /* 하단 구분선 */
+    border-bottom: 1px solid #ccc;
 }
 /* 속박스 */
 .top {
-    position: relative;
+    /* 지운이유: .gnb 서브배경 가상요소때문! */
+    /* position: relative; */
     height: 128px;
 }
 /* 로고 */
@@ -52,14 +55,76 @@
     transition: width .2s;
 }
 /* 마우스 오버시 하단바 보이기 */
-.gnb>ul>li>a:hover::after {
+.gnb>ul>li:hover>a::after {
     width: 100%;
 }
-/* SNS */
+/* 서브 메뉴 */
+.smenu {
+    position: absolute;
+    z-index:1; /* 서브메뉴 배경 가상요소보다 위로 표시! */
+    /* background-color: #fff; */
+    /* 서브 숨기기 */
+    height: 0;
+    overflow:hidden;
+    transition: height .4s ease-out;
+}
+/* 상위메뉴 li 오버시 서브메뉴 보이기 */
+/* 프로그램 소개 */
+.gnb>ul>li:nth-child(1):hover .smenu,
+.gnb>ul>li:nth-child(1):hover::after {
+    height: 120px;
+}
+/* 동영상 */
+.gnb>ul>li:nth-child(3):hover .smenu,
+.gnb>ul>li:nth-child(3):hover::after {
+    height: 150px;
+}
+/* 사진첩 */
+.gnb>ul>li:nth-child(4):hover .smenu,
+.gnb>ul>li:nth-child(4):hover::after {
+    height: 90px;
+}
+/* 서브 메뉴 ol요소 */
+.smenu ol {
+    padding-top: 5px;
+}
+
+/* 서브 메뉴 a요소 */
+.smenu a {
+    display: block;
+    font-size: 1.4rem;
+    padding: 10px 0;
+}
+/* 상위 li 가상요소로 서브 배경 박스 넣기 
+- 서브 메뉴 끝까지 차는 박스
+-> .sm인 li만 생성됨! */
+.gnb>ul>li.sm::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 0px;
+    /* 상단 1px 이동은 마진탑으로 */
+    margin-top: 1px;
+    background-color: #fff;
+    transition: height .4s ease-out;
+}
+/* 상위메뉴 li 오버시 li 가상요소에 하단선 생김 */
+.gnb>ul>li.sm:hover::after {
+    border-bottom: 2px solid red;
+}
+
+/* 탑메뉴 */
 .tmenu {
     position: absolute;
     top: 20px;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+}
+.tmenu>ul {
+    float:right;
 }
 .tmenu>ul>li>a {
     font-size: 1.5rem;
