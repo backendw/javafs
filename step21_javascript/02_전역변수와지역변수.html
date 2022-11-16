@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // var는 오직 함수의 중괄호 안에서 선언시 지역변수가 된다. -> 함수 영역 변수
+        function fn(){
+            // 지역 변수
+            var usa = "유에스에이";
+            var uk = "유케이";
+
+            korea = "코리아";
+
+            console.log("함수내: ",korea);
+            console.log("함수내: ",usa);
+            console.log("함수내: ",uk);
+        }
+
+        // 전역 변수
+        var korea = "대한민국";
+        var uk = "영국";
+        
+        console.log("함수바깥 함수호출전: ", korea);
+        // console.log("함수바깥 함수호출전: ", usa);
+        console.log("함수바깥 함수호출전: ", uk);
+        fn();
+        console.log("함수바깥 함수호출후: ", korea);
+        // console.log("함수바깥 함수호출후: ", usa);
+        console.log("함수바깥 함수호출후: ", uk);
+
+        if (true) {
+            // 전역 변수
+            var who = "누구?";
+            console.log("if안의: ", who);
+        }
+
+        console.log("if밖의: ", who);
+
+        // 전역 변수
+        for (var i = 3; i > 0; i--) {
+            console.log("for안의: ", i);
+        }
+
+        console.log("for밖의: ", i);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var varV = 'var전역변수값';
+        let letV = 'let전역변수값';
+        console.log('블록이전: ', letV);
+        console.log('블록이전: ', varV);
+        // console.log('블록이전: ', varV2);
+        {
+            console.log('블록안: ', varV);
+            // let은 위에서 미리 호출할 수 없다. -> 선언 후 사용 가능
+            // Uncaught ReferenceError: Cannot access 'letV' before initialization
+            // console.log('블록안: ', letV);
+            var varV = 'var지역변수값';
+            // let으로 선언한 변수를 재선언할 수 없다.
+            // Uncaught SyntaxError: Identifier 'letV' has already been declared
+            // var letV = 'var지역변수값';
+            let letV = 'let지역변수값';
+            console.log('블록안: ', varV);
+            // Uncaught ReferenceError: varV2 is not defined
+            // console.log('블록안: ', varV2);
+            console.log('블록안: ', letV);
+            
+            // 선언없이 값만 할당하여 사용하면 var로 선언한 전역 변수로 자동 지정된다. -> 좋지 않다.
+            varV2 = '선언없는값';
+            console.log('블록안: ', varV2);
+        }
+        console.log('블록이후: ', letV);
+        // 블록에서 변수 재선언하면 전역 변수 값이 지역 변수 값으로 바뀐다. -> 좋지 않다.
+        console.log('블록이후: ', varV);
+        console.log('블록이후: ', varV2);
+
+        // 변수 호이스팅(hoisting) - 변수에 값을 할당 후 var 키워드로 선언한다.
+        console.log(varV3); // undefined
+        varV3 = 'var선언전값';
+        console.log(varV3);
+        var varV3;
+
+        // let을 사용하면 변수 호이스팅 못한다.
+        // 선언전에 할당하면 에러난다.
+        // console.log(letV2); // Uncaught ReferenceError: Cannot access 'letV2' before initialization
+        // Uncaught ReferenceError: Cannot access 'letV2' before initialization
+        // letV2 = 'let선언전값'; 
+        // console.log(letV2);
+        // let letV2;
+    </script>
+</body>
+</html>

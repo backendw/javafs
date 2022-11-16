@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>상수(constant)</h1>
+    <script>
+        // 선언과 할당을 함께 지정해야 한다.
+        // const consV; //Uncaught SyntaxError: Missing initializer in const declaration
+        const consV = '선언과 할당을 함께~!';
+        console.log(consV);
+
+        // 재 할당 할 수 없다.
+        // Uncaught TypeError: Assignment to constant variable.
+        // consV = '재할당 할 수 없어요~';
+        console.log(consV);
+
+    </script>
+</body>
+</html>
