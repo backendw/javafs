@@ -13,7 +13,7 @@
             - []
 
             배열 호출
-
+            배열명[n] (n=0,1,2...)
 
         */
         window.addEventListener("DOMContentLoaded", function(){
@@ -43,6 +43,45 @@
                     alert('대한독립만세!');
                 }
             ];
+
+            console.log('arr2',arr2);
+
+            tg[1].innerHTML = `
+            ${arr2[0]}은 ${arr2[2]}년에 일제에 항거하여 ${arr2[1]}를 들고 일어난 민중봉기를 기념하는 날이다.
+            `;
+            tg[1].title = '만세를 하시려면 클릭하세요!';
+
+            // 손가락 모양
+            tg[1].style.cursor = 'pointer';
+
+            tg[1].onclick = arr2[3];
+
+            const arr3 = [];
+            arr3.length = 8;
+            //console.log('arr3',arr3);
+            
+            // 각 배열 주소에 값을 할당함.
+            arr3[0] = '산';
+            arr3[1] = '할아버지';
+            arr3[2] = '구름모자';
+            arr3[3] = '썻네!';
+            arr3[4] = '나비같이';
+            arr3[5] = '훨훨';
+            arr3[6] = '훠얼훨';
+            arr3[7] = '날아서~';
+
+            //console.log('arr3 배열전체값:',arr3.valueOf());
+            
+            // join(구분자)
+            console.log('arr3 배열 구분자로 문자찍기:',
+            arr3.join('^'));
+
+            // push(값) ~ 배열 맨 뒤에 값 추가
+            arr3.push('김창완작사');
+
+            tg[2].innerHTML = arr3.join('★');
+
+            
 
         });
     </script>
