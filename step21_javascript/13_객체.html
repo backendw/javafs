@@ -28,8 +28,8 @@
             {속성: 속성값, 속성: 속성값, ...}
 
             객체 호출
-            객체명.
-            객체명.속성명
+            객체명['속성명'];
+            객체명.속성명;
         */
 
         const SSG = new Object({
@@ -69,6 +69,44 @@
         tg[0].onclick = SSG['팬레터'];
         tg[0].title = `여기를 클릭하여 ${SSG['너의 이름은?']} 팬레터를 확인하세요!`;
         tg[0].style.cursor = 'pointer';
+
+        // new 키워드 없이 생성
+        const GU = {
+            name: '공유',
+            tall: '184cm',
+            weight: '74kg',
+            com: '매니지먼트숲',
+            work: '도깨비, 부산행',
+            msg: (txt)=>{
+                alert('팬레터:'+txt);
+                tg[1].style.background = 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gong_Yoo_%28Sep_2016%29.png/250px-Gong_Yoo_%28Sep_2016%29.png) repeat-x top/auto 100%';
+                tg[1].style.color = '#fff';
+                tg[1].style.textShadow = '0 0 5px #000';
+                tg[1].style.lineHeight = '30px';
+                tg[1].style.height = '100px';
+                tg[1].style.paddingTop = '100px';
+                tg[1].style.transition = '2s ease-in-out .5s';
+            }
+        };
+
+        console.log(GU);
+
+        tg[1].style.lineHeight = '24px';
+        tg[1].innerHTML = `
+            저는 ${GU.name}입니다.
+            몸무게는 비밀인데요 그래도 말씀드리자면
+            ${GU.weight}입니다. ㅎㅎㅎ<br>
+            제 대표작은 ${GU.work}입니다.<br>
+            제 소속사는 모르시는 분들이 많은데
+            ${GU.com}입니다. 빠이~!
+        `;
+
+        tg[1].setAttribute('title', GU.name+' 팬레터를 확인하세요! 바로 클릭!');
+        tg[1].style.cursor = 'pointer';
+        // \n은 alert에서 줄바꿈 해준다.
+        tg[1].onclick = ()=>GU.msg(
+            '\n공유오빠, 오징어게임 싸다고 멋쪗어요!\n차기작도 기대해요! 화이팅!!'
+        );
     </script>
 
 </body>
