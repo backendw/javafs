@@ -8,6 +8,70 @@
 </head>
 <body>
     <h1>객체</h1>
-    
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+
+    <script>
+
+        const tg = document.querySelectorAll('.cont');
+
+        /* 
+            window ~ 창 표시 관련 객체
+            document ~ 문서 구조에 관련 객체
+            Array ~ 배열 객체
+            Object ~ 객체 생성을 위한 객체
+            Date ~ 날짜 객체
+            Math ~ 수학 객체
+
+            객체 생성
+            new Object({속성: 속성값, 속성: 속성값, ...})
+            {속성: 속성값, 속성: 속성값, ...}
+
+            객체 호출
+            객체명.
+            객체명.속성명
+        */
+
+        const SSG = new Object({
+            '너의 이름은?': '손석구',
+            '생일': '1983년 2월 7일',
+            '출생지': '대전광역시 유성구 전민동',
+            '키': '178cm',
+            '몸무게': '80kg',
+            '혈액형': 'C형',
+            '성별': '남성',
+            '대표작': '나의 해방일지, 범죄도시2',
+            '소속사': '셋별당엔터',
+            '비밀번호': 7777,
+            '팬레터': function(){
+                alert('상남자 오빠! 지금뭐해?');
+                tg[0].style.background = 'url(https://file.mk.co.kr/meet/neds/2022/05/image_readtop_2022_456627_16533579475052374.jpeg) repeat-x top/auto 100%';
+                tg[0].style.color = '#fff';
+                tg[0].style.textShadow = '0 0 5px #000';
+                tg[0].innerHTML = '손석구 최고 멋쨍이! 승승장구! 화이팅!!';
+                tg[0].style.lineHeight = '84px';
+                tg[0].style.transform = 'scale(1.2)';
+                tg[0].style.transition = '1s ease-out 1s';
+            }
+        });
+
+        tg[0].innerHTML =`
+            당신이 좋아하는 남자배우는?
+            ${SSG['너의 이름은?']}
+            / 몸무게를 아세요?
+            ${SSG['몸무게']} <br>
+            생년월일은?
+            ${SSG["생일"]}
+            / 대표작은? ${SSG['대표작']}
+        `;
+
+        tg[0].style.lineHeight = '40px';
+        tg[0].onclick = SSG['팬레터'];
+        tg[0].title = `여기를 클릭하여 ${SSG['너의 이름은?']} 팬레터를 확인하세요!`;
+        tg[0].style.cursor = 'pointer';
+    </script>
+
+
 </body>
 </html>
