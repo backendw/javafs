@@ -80,6 +80,16 @@
             transform: rotateX(-90deg) translateZ(150px);
         }
 
+        /* 버튼 */
+        .btns {
+            text-align: center;
+            padding: 50px;
+        }
+        .btns button {
+            font-size: 40px;
+            border-radius: 10px;
+        }
+
         /* 애니메이션 호출 */
         .cube-ani {
             animation: cubeAni 4s linear infinite;
@@ -95,10 +105,38 @@
             100% {transform: rotateX(370deg) rotateY(-330deg);}
         }
     </style>
+    <script>
+        /* 
+            클래스 컨트롤 객체
+            classList
+                - add(클래스명) -> 클래스 추가
+                - remove(클래스명) -> 클래스 제거
+                - toggle(클래스명) -> 클래스 유무에 따라 추가/제거
+                - contains(클래스명) -> 지정한 클래스가 있으면 true
+        */
+
+        window.addEventListener("DOMContentLoaded", function(){
+            const btns = document.querySelector('.btns button');
+            const cube = document.querySelector('.cube');
+            
+            const aniFn = function(){
+                cube.classList.toggle('on');
+
+                cube.classList.contains('on') ? btns.innerText = '멈춰!' : btns.innerText = '돌아!'
+                console.log(cube.classList.contains('on'));
+            };
+            
+            btns.onclick = aniFn;
+
+        });
+    </script>
 </head>
 <body>
     <h1>Rolling Cube 3D Animation</h1>
-    <div class="cube cube-ani on">
+    <div class="btns">
+        <button>돌아!</button>
+    </div>
+    <div class="cube cube-ani">
         <span></span>
         <span></span>
         <span></span>
