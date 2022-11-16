@@ -48,14 +48,15 @@
 
             let isrc;
 
-            if (btxt === '포스터') {
-                isrc = '/assets/images/ala1.jpg';
-            } else if (btxt === '장면1') {
-                isrc = '/assets/images/ala4.jpg';
-            } else if (btxt === '장면2') {
-                isrc = '/assets/images/ala3.jpg';
-            } else if (btxt === '장면3') {
-                isrc = '/assets/images/ala2.jpg';
+            switch (btxt) {
+                case '포스터':
+                    isrc = '/assets/images/ala1.jpg'; break;
+                case '장면1':
+                    isrc = '/assets/images/ala4.jpg'; break;
+                case '장면2':
+                    isrc = '/assets/images/ala3.jpg'; break;
+                case '장면3':
+                    isrc = '/assets/images/ala2.jpg'; break;
             }
 
             console.log(isrc);
