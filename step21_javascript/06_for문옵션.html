@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        width:50px;
+    }
+</style>
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        // console.log('로딩완료!');
+        const btns = document.querySelectorAll('button');
+        // console.log(btns);
+        const cnt = btns.length;
+        let tg = document.querySelectorAll('.forCls');
+        // console.log(tg);
+
+        for (let i = 0; i < cnt; i++) {
+            btns[i].onclick = addNum;
+        }
+
+        function addNum() {
+            // this는 항상 이벤트가 설정된 요소 자신이다.
+            // 버튼별로 호출하는 요소가 들어온다.
+            let btxt = this.innerText;
+            // console.log('나유~', btxt);
+
+            if (btxt === '기본호출') {
+                for (let i = 1; i <= 10; i++) {
+                    tg[0].innerHTML += `<img src="/assets/images/num/num_0${i}.png" alt="숫자이미지">`;
+                }
+            }
+        }
+    });
+</script>
+
+<body>
+    <h1>for문 옵션</h1>
+    <button>기본호출</button>
+    <button>4번과 7번 제외</button>
+    <button>5번까지</button>
+    <div class="forCls">
+
+    </div>
+</body>
+
+</html>
