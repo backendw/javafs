@@ -5,18 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img {width:200px;}
+        .Bcase {
+            border:1px solid blue;
+        }
+        .Bcase img {
+            width:100px;
+        }
+    </style>
     <script>
         /* 
             화살표 함수
             function(){} 를 ()=>{} 로
         */
+
         window.addEventListener("DOMContentLoaded", ()=>{
             const mini = document.querySelectorAll('.mini');
+            const bcase = document.querySelector('.Bcase');
+
+            mini[0].onclick = ()=>insMini(1);
+            mini[1].onclick = ()=>insMini(5);
+            mini[2].onclick = ()=>insMini(10);
+
+            // mini[0].onclick = function(){
+            //     insMini(1);
+            // };
+
+            // 리셋
+            const rbtn = document.querySelector('.rbtn');
+            rbtn.style.fontSize = '40px';
+            // 실행 코드가 한 문장이면 {} 생략 가능!
+            rbtn.onclick = ()=> bcase.innerHTML = '';
+
+            function insMini(num){
+                console.log(num);
+
+                for (let i=0; i<num; i++) {
+                    bcase.innerHTML += '<img class="mini" src="/assets/images/Minions.png" alt="미니언즈">';
+                }
+            }
         });
 
-        function insMini(num){
-
-        }
     </script>
 </head>
 <body>
@@ -24,7 +54,7 @@
     <img class="mini" src="/assets/images/Minions.png" alt="미니언즈" title="나를 클릭하면 한개씩 가방에 들어갈꼬얌~!">
     <img class="mini" src="/assets/images/Minions.png" alt="미니언즈" title="나를 클릭하면 다섯개씩 가방에 들어갈꼬얌~!">
     <img class="mini" src="/assets/images/Minions.png" alt="미니언즈" title="나를 클릭하면 열개씩 가방에 들어갈꼬얌~!">
-    <button>리셋</button>
+    <button class="rbtn">리셋</button>
     <div class="Bcase"></div>
 </body>
 </html>
