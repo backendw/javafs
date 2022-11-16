@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <!-- 스크립트 연결시 defer(미루다 의미) 속성을 사용하면 html 요소가 모두 로딩된 후 실행함 -->
     <script src="js/main.js" defer></script>
@@ -16,7 +17,14 @@
             <!-- logo -->
             <h1 class="tit">CGV 예고편 상영관</h1>
             <!-- GNB -->
-            <nav class="gnb"></nav>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="">영화</a></li>
+                    <li><a href="">예매</a></li>
+                    <li><a href="">극장</a></li>
+                    <li><a href="">이벤트&amp;컬처</a></li>
+                </ul>
+            </nav>
         </header>
     </div>
     <!-- 메인영역 -->
@@ -44,14 +52,15 @@
                     동영상 특수효과가 기본적으로 표시해제: iv_load_policy=3
 
                 -->
-                <iframe src="https://www.youtube.com/embed/2hnkUpo_2yg?autoplay=1&mute=1&loop=1&playlist=2hnkUpo_2yg"></iframe>
+                <iframe src="https://www.youtube.com/embed/2hnkUpo_2yg?autoplay=1&mute=1&loop=1&playlist=2hnkUpo_2yg" allow="autoplay"></iframe>
+                <!-- allow="autoplay"는 유튜브 동영상 요청시 자동재생의 필수이다. -->
             </div>
 
             <!-- 예고편 선택 메뉴 -->
             <nav class="mlist">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="#" data-mv="mI9oyFMUlfg">
                             <img src="./images/m1.jpg" alt="닥터스트레인지2">
                             <!-- 영화정보 -->
                             <ol class="movtxt">
@@ -62,7 +71,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" data-mv="DSEfRVqjbFA">
                             <img src="./images/m2.jpg" alt="쥬라기월드:도미니언">
                             <!-- 영화정보 -->
                             <ol class="movtxt">
@@ -73,7 +82,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" data-mv="DpVAb7Bi5UQ">
                             <img src="./images/m3.jpg" alt="브로커">
                             <!-- 영화정보 -->
                             <ol class="movtxt">
@@ -84,7 +93,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" data-mv="aw9j_23nORs">
                             <img src="./images/m4.jpg" alt="범죄도시2">
                             <!-- 영화정보 -->
                             <ol class="movtxt">
@@ -95,7 +104,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" data-mv="wXWiVmTEzkA">
                             <img src="./images/m5.jpg" alt="몬스터싱어">
                             <!-- 영화정보 -->
                             <ol class="movtxt">
@@ -106,7 +115,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" data-mv="W7edvITC9g4">
                             <img src="./images/m6.jpg" alt="스파이더맨:노웨이홈">
                             <!-- 영화정보 -->
                             <ol class="movtxt">
@@ -123,7 +132,44 @@
     <!-- 하단영역 -->
     <div id="info">
         <footer class="info ibx">
-
+            <!-- 하단로고 -->
+            <div>
+                <img src="./images/blogo.png" alt="하단로고">
+            </div>
+            <!-- 회사주소 -->
+            <div>
+                <address>
+                    (04377) 서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br>
+                    대표이사 : 최병환 사업자등록번호: 104-81-45690 통신판매업신고번호 : 2017-서울용산-0662<br>
+                    개인정보보호 책임자 : 정종민대표 이메일 : cjcgvmaster@cj.netCGV 고객센터 : 1544-1122
+                </address>
+            </div>
+            <!-- SNS 박스 -->
+            <div>
+                <ol class="sns">
+                    <li>
+                        <a href="#" class="fa-brands fa-square-facebook">
+                            <span class="ir">
+                                페이스북 바로가기
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa-brands fa-square-twitter">
+                            <span class="ir">
+                                트위터 바로가기
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa-brands fa-square-instagram"> 
+                            <span class="ir">
+                                인스타그램 바로가기
+                            </span>
+                        </a>
+                    </li>
+                </ol>
+            </div>
         </footer>
     </div>
 </body>
