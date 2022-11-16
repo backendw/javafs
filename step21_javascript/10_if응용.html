@@ -32,6 +32,7 @@
 
             for (let i=0; i<cnt; i++) {
                 // 방법1: onclick 이벤트 속성에 익명함수 할당 방식 사용
+                // btns.item(i).onclick = function(){chgImg(this)};
                 btns[i].onclick = function(){chgImg(this)};
                 
                 // 방법2: 이벤트 등록 내장함수 사용
@@ -59,6 +60,7 @@
 
             console.log(isrc);
             document.querySelector('#scene').setAttribute('src',isrc);
+            // document.querySelector('#scene').src = isrc;
         }
     </script>
 </head>
