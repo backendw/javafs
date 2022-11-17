@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for~in</title>
+    <script>
+        /* 
+                for(변수 in 객체) {
+                    코드
+                }
+
+            */
+
+        const mvi = {
+            "조제": {
+                "포스터": "https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2",
+                "제목": "조제",
+                "개요": "멜로/로맨스, 드라마",
+                "감독": "김종관",
+                "출연": "한지민, 남주혁",
+                "문구": "조제 보러 오세요"
+            },
+            "이웃사촌": {
+                "포스터": "https://movie-phinf.pstatic.net/20201111_193/1605056611896fc6Ef_JPEG/movie_image.jpg?type=m99_141_2",
+                "제목": "이웃사촌",
+                "개요": "드라마, 코미디",
+                "감독": "이환경",
+                "출연": "정우, 김희원",
+                "문구": "이웃을 사랑합시다"
+            },
+            "도굴": {
+                "포스터": "https://movie-phinf.pstatic.net/20201104_45/160445535053439akc_JPEG/movie_image.jpg?type=m99_141_2",
+                "제목": "도굴",
+                "개요": "범죄",
+                "감독": "박정배",
+                "출연": "이제훈, 조우진, 신혜선, 임원희",
+                "문구": "도굴은 범죄예요"
+            }
+        };
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const btns = document.querySelectorAll('.btns button');
+            /* for~of문 사용 */
+            for (let x of btns) {
+                x.onclick = ()=>{
+                    let btxt = x.innerText;
+                    console.log(btxt);
+                    
+                    let data = mvi[btxt];
+                    console.log('할당객체:',data);
+
+                    for (let z in data) {
+                        // z는 속성명
+                        console.log(z);
+                        // 객체의 값은 객체명[속성명]
+                        console.log(data[z]);
+
+                        switch(z) {
+                            case '포스터':
+                                document.querySelector('.photo').innerHTML = `<img src="${data[z]}" alt="${btxt}의 포스터">`;
+                                break;
+                            case '제목':
+                                document.querySelector('.tit').innerText = `영화명: ${data[z]}`;
+                                break;
+                            case '개요':
+                                document.querySelector('.sum').innerText = `장르: ${data[z]}`;
+                                break;
+                            case '감독':
+                                document.querySelector('.dir').innerText = `감독: ${data[z]}`;
+                                break;
+                            case '출연':
+                                document.querySelector('.act').innerText = `출연: ${data[z]}`;
+                                break;
+                        }
+
+                    } // for~in
+
+                }; // x.onclick
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1>영화정보</h1>
+    <div class="btns">
+        <button>조제</button>
+        <button>이웃사촌</button>
+        <button>도굴</button>
+    </div>
+
+    <hr>
+
+    <div class="minfo">
+        <!-- 포스터 -->
+        <div class="photo"></div>
+        <div class="cont">
+            <!-- 제목 -->
+            <h2 class="tit"></h2>
+            <!-- 개요 -->
+            <h3 class="sum"></h3>
+            <!-- 감독 -->
+            <h3 class="dir"></h3>
+            <!-- 출연 -->
+            <h3 class="act"></h3>
+        </div>
+    </div>
+
+    <!-- 영화 한마디 -->
+    <h2 class="showtit">♥ 영화한마디!</h2>
+    <!-- 문구 -->
+    <div class="show"></div>
+</body>
+
+</html>
