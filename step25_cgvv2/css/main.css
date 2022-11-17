@@ -5,6 +5,8 @@
 @import url(reset.css);
 @import url(core.css);
 
+/* 공사중 */
+/* body * {outline: 1px dotted lime;} */
 
 /* 전체 배경색 */
 body {
@@ -13,6 +15,7 @@ body {
 
 /* 상단영역 */
 .top {
+    z-index: 9999;
     position: relative;
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
@@ -34,20 +37,91 @@ body {
     }
 }
 
-/* gnb */
+/* GNB */
 .gnb {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     right: 20px;
 }
 /* 내비 ul */
 .gnb ul {
     display: flex;
-}
-.gnb ul li {
     font-family: 'Jua', sans-serif;
+}
+.gnb ul>li {
+    position: relative;
     font-size: 2rem;
     padding: 0 10px;
+    /* 하단패딩 - 서브메뉴 아웃문제해결! */
+    padding-bottom: 5px;
+}
+.gnb ul li a {
+    color: white;
+}
+
+/* GNB 서브메뉴 */
+.smenu {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,5px);
+    width: 140px;
+    padding: 3px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+}
+.gnb ul>li:hover .smenu {
+    display: block;
+}
+/* 가상요소로 삼각형 만들기 */
+.smenu::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top:-10px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.smenu ol {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.smenu li {
+    font-size: 1.6rem;
+    line-height: 2;
+}
+.smenu a {
+    display: block;
+}
+.smenu a:hover {
+    color:red;
+}
+/* 서브메뉴 오버시 이모지(윈+;) 가상요소로 넣기 */
+.gnb ul>li:nth-child(1) .smenu a:hover::after {
+    content: '😍';
+    float:right;
+}
+.gnb ul>li:nth-child(2) .smenu a:hover::after {
+    content: '🎬';
+    float:right;
+}
+.gnb ul>li:nth-child(3) .smenu a:hover::after {
+    content: '📢';
+    float:right;
+}
+.gnb ul>li:nth-child(4) .smenu a:hover::after {
+    content: '🎁';
+    float:right;
+}
+/* 서브메뉴 중 li 보더 상단 class */
+.bdt {
+    border-top: 1px solid #ccc;
 }
 
 /* 메인영역 */
@@ -87,11 +161,24 @@ body {
 .mlist ul {
     display: flex;
     justify-content: center;
+    perspective: 480px;
 }
 /* 상위 li */
 .mlist ul>li {
     position: relative;
     overflow:hidden;
+    transform-origin: bottom;
+    transform: rotateX(40deg);
+    transition: all .4s ease-out;
+}
+
+/* 상위 li에 마우스 오버시 일러남 */
+/* 클래스on 적용시 같은 변경 적용 */
+.mlist ul>li:hover,
+.mlist ul>li.on {
+    transform: rotateX(0deg);
+    outline:1px solid aqua;
+    z-index: 1;
 }
 
 /* 상위 li 중 1번째 요소 제외 */
