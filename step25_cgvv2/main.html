@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 스크립트 연결시 defer(미루다 의미) 속성을 사용하면 html 요소가 모두 로딩된 후 실행함 -->
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <!-- 상단영역 -->
+    <div id="top">
+        <header class="top ibx">
+            <!-- logo -->
+            <h1 class="tit">CGV 예고편 상영관</h1>
+            <!-- GNB -->
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="">영화</a>
+                        <div class="smenu">
+                            <ol>
+                                <li><a href="#">무비차트</a></li>
+                                <li><a href="#">HD 트레일러</a></li>
+                                <li><a href="#">무비파인더</a></li>
+                                <li class="bdt"><a href="#">CGV아트하우스</a></li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">예매</a>
+                        <div class="smenu">
+                            <ol>
+                                <li><a href="#">빠른예매</a></li>
+                                <li><a href="#">상영시간표</a></li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">극장</a>
+                        <div class="smenu">
+                            <ol>
+                                <li><a href="#">CGV 극장</a></li>
+                                <li><a href="#">특별관</a></li>
+                                <li class="bdt"><a href="#">CLUB 서비스</a></li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">이벤트&amp;컬처</a>
+                        <div class="smenu">
+                            <ol>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">기프트샵</a></li>
+                                <li><a href="#">매거진</a></li>
+                            </ol>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <!-- 메인영역 -->
+    <div id="cont">
+        <main class="cont ibx">
+            <!-- 스크린박스 -->
+            <div id="screen">
+                <!-- 유튜브 아이프레임 width="893" height="502" -->
+                <!-- 
+                    https://developers.google.com/youtube/player_parameters
+                    유튜브url?키=값&키=값&... 
+                    자동재생: autoplay=1
+                    소리없음: mute=1
+                    -> 자동재생하려면 소리없음 지정
+                    반복재생: loop=1
+                    반복재생리스트: playlist=동영상ID
+                    -> 반복재생하려면 반복재생리스트 지정
+                    
+                    유튜브로고표시제거: modestbranding=1
+                    동영상 플레이어 컨트롤을 표시제거: controls=0
+                    전체 화면 버튼이 플레이어에 표시제거: fs=0
+                    특정 시간(단위: 60초) 이후에 동영상 재생: start=60
+                    동영상 재생을 중지해야 할 시간(단위: 60초): end=60
+                    자막 해제: cc_load_policy=0
+                    동영상 특수효과가 기본적으로 표시해제: iv_load_policy=3
+
+                -->
+                <iframe src="https://www.youtube.com/embed/2hnkUpo_2yg?autoplay=1&mute=1&loop=1&playlist=2hnkUpo_2yg" allow="autoplay"></iframe>
+                <!-- allow="autoplay"는 유튜브 동영상 요청시 자동재생의 필수이다. -->
+            </div>
+
+            <!-- 예고편 선택 메뉴 -->
+            <nav class="mlist">
+                <ul>
+                    <li>
+                        <a href="#" data-mv="mI9oyFMUlfg">
+                            <img src="./images/m1.jpg" alt="닥터스트레인지2">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>닥터스트레인지2</li>
+                                <li>베네딕트 컴버배치</li>
+                                <li>액션, 판타지, 모험</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="DSEfRVqjbFA">
+                            <img src="./images/m2.jpg" alt="쥬라기월드:도미니언">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>쥬라기월드:도미니언</li>
+                                <li>크리스 프랫</li>
+                                <li>액션, 모험</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="DpVAb7Bi5UQ">
+                            <img src="./images/m3.jpg" alt="브로커">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>브로커</li>
+                                <li>송강호, 강동원</li>
+                                <li>드라마</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="aw9j_23nORs">
+                            <img src="./images/m4.jpg" alt="범죄도시2">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>범죄도시2</li>
+                                <li>마동석, 손석구</li>
+                                <li>범죄, 액션</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="wXWiVmTEzkA">
+                            <img src="./images/m5.jpg" alt="몬스터싱어">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>몬스터싱어</li>
+                                <li>바네사 파라디</li>
+                                <li>애니메이션</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="W7edvITC9g4">
+                            <img src="./images/m6.jpg" alt="스파이더맨:노웨이홈">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>스파이더맨:노웨이홈</li>
+                                <li>톰 홀랜드</li>
+                                <li>액션,모험</li>
+                            </ol>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+    </div>
+    <!-- 하단영역 -->
+    <div id="info">
+        <footer class="info ibx">
+            <!-- 하단로고 -->
+            <div>
+                <img src="./images/blogo.png" alt="하단로고">
+            </div>
+            <!-- 회사주소 -->
+            <div>
+                <address>
+                    (04377) 서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br>
+                    대표이사 : 최병환 사업자등록번호: 104-81-45690 통신판매업신고번호 : 2017-서울용산-0662<br>
+                    개인정보보호 책임자 : 정종민대표 이메일 : cjcgvmaster@cj.netCGV 고객센터 : 1544-1122
+                </address>
+            </div>
+            <!-- SNS 박스 -->
+            <div>
+                <ol class="sns">
+                    <li>
+                        <a href="#" class="fa-brands fa-square-facebook">
+                            <span class="ir">
+                                페이스북 바로가기
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa-brands fa-square-twitter">
+                            <span class="ir">
+                                트위터 바로가기
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa-brands fa-square-instagram"> 
+                            <span class="ir">
+                                인스타그램 바로가기
+                            </span>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
