@@ -6,6 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>for~in</title>
+    <style>
+        .showtit {
+            display: none;
+        }
+
+        .show span {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background: yellow;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
     <script>
         /* 
                 for(변수 in 객체) {
@@ -45,12 +60,12 @@
             const btns = document.querySelectorAll('.btns button');
             /* for~of문 사용 */
             for (let x of btns) {
-                x.onclick = ()=>{
+                x.onclick = () => {
                     let btxt = x.innerText;
                     console.log(btxt);
-                    
+
                     let data = mvi[btxt];
-                    console.log('할당객체:',data);
+                    console.log('할당객체:', data);
 
                     for (let z in data) {
                         // z는 속성명
@@ -58,9 +73,10 @@
                         // 객체의 값은 객체명[속성명]
                         console.log(data[z]);
 
-                        switch(z) {
+                        switch (z) {
                             case '포스터':
-                                document.querySelector('.photo').innerHTML = `<img src="${data[z]}" alt="${btxt}의 포스터">`;
+                                document.querySelector('.photo').innerHTML =
+                                    `<img src="${data[z]}" alt="${btxt}의 포스터">`;
                                 break;
                             case '제목':
                                 document.querySelector('.tit').innerText = `영화명: ${data[z]}`;
@@ -79,7 +95,7 @@
                         // 한 글자씩 span태그로 싸서 해당요소에 넣음!
                         if (z === '문구') {
                             let txt = data[z];
-                            console.log('문구데이터:',txt);
+                            console.log('문구데이터:', txt);
                             let newtxt = '';
                             for (let m of txt) {
                                 console.log('한글자씩:', m);
