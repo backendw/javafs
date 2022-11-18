@@ -74,7 +74,27 @@
                             case '출연':
                                 document.querySelector('.act').innerText = `출연: ${data[z]}`;
                                 break;
-                        }
+                        } // switch
+                        /* for of문으로 문자데이터 잘라 넣기 */
+                        // 한 글자씩 span태그로 싸서 해당요소에 넣음!
+                        if (z === '문구') {
+                            let txt = data[z];
+                            console.log('문구데이터:',txt);
+                            let newtxt = '';
+                            for (let m of txt) {
+                                console.log('한글자씩:', m);
+                                if (m === ' ') // 스페이스일 경우
+                                    newtxt += '&nbsp;&nbsp;&nbsp;';
+                                else
+                                    newtxt += `<span>${m}</span>`;
+                            }
+                            document.querySelector('.show').innerHTML = newtxt;
+
+                            // '영화 한마디' 타이틀 보이기
+                            document.querySelector('.showtit').style.display = 'block';
+
+
+                        } // if
 
                     } // for~in
 
