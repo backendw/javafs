@@ -109,6 +109,33 @@
                             <label for="mnm">이름</label>
                             <input type="text" name="mnm" id="mnm" maxlength="20" placeholder="이름을 입력해주세요!">
                         </li>
+                        <!-- 성별 -->
+                        <li>
+                            <span class="itit">성별</span>
+                            <label for="gen1">남성</label>
+                            <input type="radio" name="gen" id="gen1">
+                            <label for="gen2">여성</label>
+                            <input type="radio" name="gen" id="gen2">
+                        </li>
+                        <!-- 이메일 -->
+                        <li>
+                            <label for="email1">이메일</label>
+                            <input type="text" name="email1" id="email1" placeholder="이메일앞주소">
+                            <span class="gol">@</span>
+                            <select name="seleml" id="seleml">
+                                <option value="naver.com">네이버</option>
+                                <option value="daum.net">다음</option>
+                                <option value="hotmail.com">핫메일</option>
+                                <option value="hanmail.net">한메일</option>
+                                <option value="gmail.com">지메일</option>
+                                <option value="free">직접입력</option>
+                            </select>
+                        </li>
+                        <!-- 이메일 뒷주소 직접입력창 -->
+                        <li>
+                            <label for="email2"></label>
+                            <input type="text" name="email2" id="email2" placeholder="이메일뒷주소">
+                        </li>
                     </ul>
                 </form>
             </section>
