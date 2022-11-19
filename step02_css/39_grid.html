@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>그리드 레이아웃</title>
     <style>
         /* 그리드 디스플레이 */
         .grid {
@@ -20,7 +20,12 @@
 
             /* 세로 그리드 템플릿 */
             /* 4행 부터는 자동생성 값으로 지정된다.  */
-            grid-template-rows: 100px 200px 300px;
+            /* grid-template-rows: 100px 200px 300px; */
+            /* 높이값 전체에서의 비를 쓴 만큼 */
+            /* grid-template-rows: 1fr 3fr 5fr 2fr; */
+            /* grid-template-rows: repeat(4, 300px); */
+            /* 모든 높이값을 동일하게 */
+            /* grid-auto-rows: 400px; */
 
             /* 수평뱡향 간격 */
             grid-column-gap: 1vw;

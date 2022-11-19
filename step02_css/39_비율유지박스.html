@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비율유지박스(Ratio Box)</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* 비율유지박스 */
+        .rbx {
+            width: 60%;
+            /* height: 45%; */
+            /* 높이 값으로는 비율 유지 않됨 */
+
+            /* height 없이 높이 지정 */
+            /* padding-top: 50%; */
+
+            background: url(/assets/images/mobum.jpg) no-repeat center/cover;
+            margin: 0 auto;
+        }
+
+        .rbx::after {
+            content: '';
+            display: block;
+            /* 
+            배경이미지의 비율로 계산하기
+            가로:세로=1170:614=100%:x -> x는 52.47%
+            */
+            padding-top: 52.47%;
+        }
+
+        /* 콘텐츠 넣기 */
+        .cat {
+            /* position: absolute; */
+            bottom: 2%;
+            left: 5%;
+            margin: 0;
+            padding: 0;
+            color:#fff;
+            font-size: 1.5vw;
+            font-weight: bold;
+            line-height: 2;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="rbx">
+        <!-- 직계 자식 블록요소에게 패딩탑 값을 %로 주면 정확한 비가 성립한다. 100%는 1:1 -->
+        <!-- 16:9=100:x, x는 56.25% -->
+        <!-- <div style="padding-top:56.25%;"></div> -->
+
+        <!-- 콘텐츠 넣기 -->
+        <dl class="cat">
+            <dt>출연진</dt>
+            <dd>이제훈(김도기역)</dd>
+            <dd>이솜(강하나역)</dd>
+            <dd>김의성(장성철역)</dd>
+        </dl>
+    </div>
+</body>
+</html>
