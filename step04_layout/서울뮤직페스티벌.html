@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃</title>
-    <style>
-        
-    </style>
-</head>
-<body>
-    <!-- https://seoulmusicfestival.co.kr/kor/ -->
-    <!-- 
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>레이아웃</title>
+   <!-- https://960.gs/ -->
+   <!-- https://1200px.com/ -->
+   <!-- https://w3schools.com/css/css_rwd_grid.asp -->
+   <!-- https://seoulmusicfestival.co.kr/kor/ -->
+   <!-- 
         분석
         1. 7개 파트 = 겉박스 + 속박스(max-width, 가운데)
             1) 상단영역
@@ -24,48 +23,149 @@
 
      -->
 
-     <!-- 1) 상단영역 -->
-     <div>
-        <section class="ibx">
+   <style>
+      html,
+      body {
+         margin: 0;
+         padding: 0;
+      }
 
-        </section>
-     </div>
-     <!-- 2) 콘텐츠영역1 -->
-     <div>
-        <section class="ibx">
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+         margin: 0;
+         padding: 0;
+         font-size: 30px;
+      }
 
-        </section>
-     </div>
-     <!-- 3) 콘텐츠영역2 -->
-     <div>
-        <section class="ibx">
+      /* 임시표시 */
+      .ibx h2,
+      .ibx h1 {
+         position: absolute;
+         width: 100%;
+         font-size: 5vw;
+         text-align: center;
+         z-index: -1;
+      }
 
-        </section>
-     </div>
-     <!-- 4) 콘텐츠영역3 -->
-     <div>
-        <section class="ibx">
+      .cont h2 {
+         line-height: 100vh;
+      }
 
-        </section>
-     </div>
-     <!-- 5) 콘텐츠영역4 -->
-     <div>
-        <section class="ibx">
+      /* 공통 파티션 12그리드 클래스 */
+      /* col-숫자: 숫자는 기둥의 수 
+      한 줄에는 최대한 12기둥이 되어야 함!*/
+      .col-1 {width: 8.33%;}
+      .col-2 {width: 16.66%;}
+      .col-3 {width: 25%;}
+      .col-4 {width: 33.33%;}
+      .col-5 {width: 41.66%;}
+      .col-6 {width: 50%;}
+      .col-7 {width: 58.33%;}
+      .col-8 {width: 66.66%;}
+      .col-9 {width: 75%;}
+      .col-10 {width: 83.33%;}
+      .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
 
-        </section>
-     </div>
-     <!-- 6) 콘텐츠영역5 -->
-     <div>
-        <section class="ibx">
+      /* 속박스 */
+      .ibx {
+         position: relative;
+         display: flex;
+         flex-wrap: wrap;
+         max-width: 1400px;
+         margin: 0 auto;
+         outline: 1px solid gray;
+         /* 임시높이 */
+         min-height: 100px;
+      }
 
-        </section>
-     </div>
-     <!-- 7) 하단여역 -->
-     <div>
-        <section class="ibx">
+      /* 파티션 박스 */
+      .cbx {
+         outline: 1px dotted red;
+      }
 
-        </section>
-     </div>
-    
+      /* 콘텐츠 영역 공통 클래스 */
+      .cont {
+         height: 100vh;
+      }
+
+      /* 상단영역 */
+      .top {
+         height: 120px;
+      }
+
+      /* 하단영역 */
+      .info {
+         height: 220px;
+      }
+   </style>
+</head>
+
+<body>
+   <!-- 1) 상단영역 -->
+   <div>
+      <header class="ibx top">
+         <h1>상단영역</h1>
+         <div class="cbx col-2"></div>
+         <div class="cbx col-9"></div>
+         <div class="cbx col-1"></div>
+      </header>
+   </div>
+   <!-- 2) 콘텐츠영역1 -->
+   <div>
+      <section class="ibx cont ct1">
+         <h2>배너 파트</h2>
+         <div class="cbx col-4"></div>
+         <div class="cbx col-4"></div>
+         <div class="cbx col-4"></div>
+      </section>
+   </div>
+   <!-- 3) 콘텐츠영역2 -->
+   <div>
+      <section class="ibx cont ct2">
+         <h2>알림 파트</h2>
+         <div class="cbx col-4"></div>
+         <div class="cbx col-4"></div>
+         <div class="cbx col-4"></div>
+      </section>
+   </div>
+   <!-- 4) 콘텐츠영역3 -->
+   <div>
+      <section class="ibx cont ct3">
+         <h2>프로그램 소개</h2>
+         <div class="cbx col-6"></div>
+         <div class="cbx col-6"></div>
+      </section>
+   </div>
+   <!-- 5) 콘텐츠영역4 -->
+   <div>
+      <section class="ibx cont ct4">
+         <h2>SMUF 프로그램</h2>
+         <div class="cbx col-12"></div>
+      </section>
+   </div>
+   <!-- 6) 콘텐츠영역5 -->
+   <div>
+      <section class="ibx cont ct5">
+         <h2>공지사항/갤러리</h2>
+         <div class="cbx col-12"></div>
+         <div class="cbx col-12"></div>
+      </section>
+   </div>
+   <!-- 7) 하단영역 -->
+   <div>
+      <footer class="ibx info">
+         <h2>하단영역</h2>
+         <div class="cbx col-1"></div>
+         <div class="cbx col-9"></div>
+         <div class="cbx col-2"></div>
+      </footer>
+   </div>
+
 </body>
+
 </html>
