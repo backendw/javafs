@@ -11,7 +11,31 @@
             display: grid;
 
             /* 가로 그리드 템플릿 */
-            grid-template-columns: 100px 200px 300px;
+            /* grid-template-columns: 100px 200px 300px 400px; */
+            /* fr단위로 가로전체에 대한 비율 설정 */
+            /* grid-template-columns: 1fr 3fr 5fr 2fr; */
+            /* repeat(수치의 반복수, 반복수치) */
+            grid-template-columns: repeat(5, 1fr);
+            /* grid-template-columns: repeat(2, 300px 1fr 3fr); */
+
+            /* 세로 그리드 템플릿 */
+            /* 4행 부터는 자동생성 값으로 지정된다.  */
+            grid-template-rows: 100px 200px 300px;
+
+            /* 수평뱡향 간격 */
+            grid-column-gap: 1vw;
+            /* 수직방향 간격 */
+            grid-row-gap: 1.5vw;
+
+            max-width: 1200px;
+            margin: 0 auto;
+            outline: 2px dotted red;
+        }
+        /* 갤러리 이미지 */
+        .grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
