@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>무한스크롤</title>
+    <title>흐르는글자</title>
     <style>
+        @import url('https://fonts.cdnfonts.com/css/futura-std-4');
         html,body {
             margin:0;
             padding:0;
@@ -14,6 +15,7 @@
         body {
             background-image: linear-gradient(to bottom, #fff 20%, skyblue 40%, #fff);
             overflow:hidden;
+            font-family: 'Futura Std', sans-serif;
         }
         /* 폰박스 */
         .iphone {
@@ -94,6 +96,48 @@
                 transform: rotateX(370deg) rotateY(-330deg);
             }
         }
+
+        /* 흐르는 글자 */
+        .fbx {
+            position: absolute;
+            width: 100vw;
+        }
+        /* 텍스트 박스(움직일 박스) */
+        .tbx {
+            position: relative;
+            left: 0;
+            /* 화면 크기의 두배 */
+            width: 200vw;
+            display: flex;
+        }
+        /* 텍스트 박스 하위 ul 2개 공통 */
+        .tbx ul {
+            margin: 0;
+            padding: 0;
+            list-style:none;
+            display: flex;
+            flex:1;
+        }
+        /* 하위 li 공통 */
+        .tbx li {
+            flex: 1;
+            text-align: center;
+            font-size: 4vw;
+            color:#a0a0a0;
+        }
+        .txt-ani1 {
+            animation: txtFlow1 10s linear infinite;
+        }
+        @keyframes txtFlow1 {
+            to {
+                left:-100%;
+            }
+        }
+
+        /* 위치 */
+        .f1 {
+            bottom: 5vh;
+        }
         
     </style>
 </head>
@@ -107,5 +151,50 @@
         <span></span>
         <span></span>
     </div>
+
+    <!-- 흐르는글자1 -->
+    <div class="fbx f1">
+        <div class="tbx txt-ani1">
+            <ul>
+                <li>PRESTIGE</li>
+                <li>·</li>
+                <li>CONSIDERATION</li>
+                <li>·</li>
+                <li>AFFINITY</li>
+                <li>·</li>
+            </ul>
+            <ul>
+                <li>PRESTIGE</li>
+                <li>·</li>
+                <li>CONSIDERATION</li>
+                <li>·</li>
+                <li>AFFINITY</li>
+                <li>·</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 흐르는글자2 -->
+    <div class="fbx f2">
+        <div class="tbx txt-ani2">
+            <ul>
+                <li>PRESTIGE</li>
+                <li>·</li>
+                <li>CONSIDERATION</li>
+                <li>·</li>
+                <li>AFFINITY</li>
+                <li>·</li>
+            </ul>
+            <ul>
+                <li>PRESTIGE</li>
+                <li>·</li>
+                <li>CONSIDERATION</li>
+                <li>·</li>
+                <li>AFFINITY</li>
+                <li>·</li>
+            </ul>
+        </div>
+    </div>
+
 </body>
 </html>
