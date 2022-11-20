@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 객체</title>
+    <style>
+        .time {
+            width: 500px;
+            padding: 10px;
+            text-align: center;
+            font-size: 42px;
+            color: aqua;
+            background-color: #000;
+            margin: 0 auto;
+        }
+
+        /* 이미지박스 */
+        .imbx {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .imbx img {
+            width: 100%;
+        }
+    </style>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            /* 
+                Math 객체 ~ 수학 객체로써 다른 객체와 달리 new 키워드 없이 바로 사용할 수 있다. 이런 객체를 정적객체(static object)라고 한다. Array(), Object() 도 정적객체이다.
+
+                Math.min(값들) ~ 최소값
+                Math.max(값들) ~ 최대값
+                Math.round(소수점값) ~ 반올림
+                Math.ceil(소수점값) ~ 올림
+                Math.floor(소수점값) ~ 내림
+                Math.abs(양수나 음수) ~ 절대값(양수값)
+                Math.random() ~ 난수(0~1 사이 소수점값 17자리수)
+
+            */
+
+            // 난수 발생시키기
+            let rdm = Math.random();
+            console.log('난수:', rdm);
+            // 난수 * 7
+            rdm *= 7;
+            console.log('난수*7:', rdm);
+            // 난수*7 -> 소수점 아래 올림
+            rdm = Math.ceil(rdm);
+            console.log('난수*7->올림:', rdm);
+
+            // 4~9 사이의 난수 구하기
+            // 1~6 사이 난수를 구한 후 시작수(3) 만큼 더함
+            // Math.ceil(Math.random()*6)+3
+            console.log('4~9 사이의 난수:', Math.ceil(Math.random() * 6) + 3);
+
+            // 랜덤 이미지 웹경로 배열 //
+            const rimg = [
+                "https://img.etnews.com/photonews/2110/1461216_20211007085904_466_0001.jpg",
+                "https://d2qqqnyszmt41w.cloudfront.net/wp-content/uploads/2021/04/23150534/202104231445162082.jpg",
+                "https://img.imbc.com/adams/Program/202111/132804027350463581.jpg",
+                "https://image.ytn.co.kr/general/jpg/2021/0925/202109251350012465_d.jpg"
+            ];
+
+            let imbx = document.querySelector('.imbx');
+
+            // 직전 랜덤수를 담을 변수
+            let bnum = 99999;
+
+            const insImg = ()=>{
+                // 1 ~ 4의 난수
+                // Math.floor() 내림적용으로 0~3 난수 발생
+                let rnum = Math.floor(Math.random()*4)
+                console.log('랜덤수:',rnum);
+
+                // 랜덤수가 바로 직전수와 같으면 다시발생하기
+                while (rnum === bnum) {
+                    rnum = Math.floor(Math.random()*4);
+                    console.log('다시난수:',rnum);
+                } // while
+
+                bnum = rnum;
+
+                imbx.innerHTML = `<img src="${rimg[rnum]}" alt="랜덤이미지">`;
+            }; // insImg
+
+            // 최초 호출
+            insImg();
+
+            // 1.5초 간격으로 호출
+            setInterval(insImg, 1500);
+
+            // 임시호출
+            // window.onclick = ()=> insImg();
+
+        }); //로드구역
+    </script>
+</head>
+
+<body>
+    <!-- 이미지박스 -->
+    <div class="imbx"></div>
+</body>
+
+</html>

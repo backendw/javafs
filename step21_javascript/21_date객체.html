@@ -89,10 +89,15 @@
                 // S = 7;
                 tt[7].innerText = addZero(S);
 
-            };
+            }; // showTime()
+
+            // 최초 호출
+            showTime();
+            // 1초 간격으로 호출
+            setInterval(showTime, 1000);
 
             // 임시 호출
-            window.onclick = () => showTime();
+            // window.onclick = () => showTime();
         });
     </script>
 </head>
