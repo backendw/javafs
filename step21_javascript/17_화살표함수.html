@@ -1,12 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        /* 
+            화살표 함수(Arrow Function)
+            ()=>{}
+            
+            1) 매개변수가 1개일 경우 () 생략 가능
+            (x)=>{} -> x=>{}
+            
+            2) 매개변수가 2개이상일 경우 () 필수!
+            (x, y)=>{}
+            
+            3) 실행문이 하나일 때 return, {} 생략 가능
+            (x)=>{return x*x;} -> x=>x*x
+
+            4) 객체리턴 시 return 키워드 생략 가능(단, ()로 감싼다.)
+            ()=>{retrun {a:1};} -> ()=>({a:1};)
+            
+        */
+
+        /* 할당형 익명 함수 */
+        let x = function (a, b) {
+            return a * b;
+        }; //x함수
+
+        // 함수 호출
+        console.log('x(100,20)함수호출:', x(100, 20));
+
+        // 화살표 함수(축약)
+        let y = (a, b) => {
+            return a * b;
+        }; //y함수
+
+        // 함수 호출
+        console.log('y(300,20)함수호출:', y(300, 20));
+
+        // 화살표 함수(좀 더 축약)
+        let z = (a, b) =>  a * b; //z함수
+
+        // 함수 호출
+        console.log('z(400,20)함수호출:', z(400, 20));
+
+        // 일반적인 함수할당
+        let my = function(x){
+            return `나는 ${x}다!`;
+        };
+
+        // 함수 호출
+        console.log(my('풀스택 개발자'));
+
+        // 축약형
+        let we = x => `우리는 ${x}다!`;
+
+        // 함수 호출
+        console.log(we('풀스택 개발자'));
+
+        window.addEventListener("DOMContentLoaded",()=>{
+            let btn = document.querySelectorAll('.btn');
+            console.log(btn);
+
+            btn[0].onclick = function(){
+                // 클릭된 요소 자신 -> this 키워드
+                //console.log(this);
+                this.innerHTML = '올드익명함수다.';
+            }; //click
+
+            btn[1].onclick = ()=>{
+                // 화살표 함수에서 this는 window 객체이다.
+                // 요소 자신은 이벤트 객체 속성(event.currentTarget)을 사용하여 구한다.
+                /* 화살표 함수에서 this는 자신을 생성한 객체를 가리킨다. 즉, 여기서는 window 로딩 구역안에 생성되어서 window 객체를 가리키고 만약 이것이 특정 object 안에 메서드라면 그 object를 가리킨다. */
+                console.log(this, event.currentTarget);
+                event.currentTarget.innerHTML = '화살표 익명함수다.';
+            }; //click
+        });
+
+    </script>
 </head>
+
 <body>
-    
+    <button class="btn btn1" style="font-size:40px;">너는 누구니? 클릭해봐!</button><br><br>
+    <button class="btn btn2" style="font-size:40px;">너는 누구니? 클릭해봐!</button>
 </body>
+
 </html>
