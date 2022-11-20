@@ -177,6 +177,27 @@
                 }; //click
             } //for~of
 
+            // 미니언즈 애니메이션
+            const mini = document.querySelector('#mini');
+            // 2초후에 미니언즈 'on1' 클래스 추가
+            setTimeout(()=>{
+                mini.classList.add('on1');
+                // mini.classList.add('on1','on2','on3'); -> 2개 이상의 클래스 추가 가능
+            }, 2000);
+            // 4초후에 미니언즈 'on1' 클래스 제거
+            setTimeout(()=>{
+                mini.classList.remove('on1');
+                // mini.classList.remove('on1','on2');
+            }, 4000);
+            // 6초후에 미니언즈 'on2' 클래스 추가/제거
+            setTimeout(()=>{
+                mini.classList.toggle('on2');
+            }, 6000);
+            // 8초후에 미니언즈 'on1' 추가, 'on2' 제거
+            setTimeout(()=>{
+                mini.classList.replace('on2','on1');
+            }, 8000);
+
         });
     </script>
 </head>
