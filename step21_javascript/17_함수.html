@@ -5,8 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        window.addEventListener("DOMContentLoaded",()=>{
+            function Korea(txt) {
+                alert(txt);
+                let ri = Ri(txt + '리');
+                alert(ri);
+                return ri + '국 만세!!!';
+            }
+
+            function Na(txt) {
+                alert(txt);
+                let ra = Ra(txt+'라');
+                alert(ra);
+                return ra + '한';
+            }
+
+            function Ri(txt) {
+                alert(txt);
+                let na = Na(txt+'나');
+                alert(na);
+                return na+'민';
+            }
+            function Na(txt) {
+                alert(txt);
+                let ra = Ra(txt+'라');
+                alert(ra);
+                return txt+' 대';
+            }
+            function Ra(txt) {
+                alert(txt);
+                return txt+' 대';
+            }
+        });
+    </script>
 </head>
 <body>
-    
+    <button onclick="alert(Korea('우'))">우리나라 대한민국 만세 프로젝트 시작!</button>
 </body>
 </html>
