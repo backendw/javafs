@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* 도깨비 프로젝트 공통클래스/웹폰트 CSS - core.css */
+
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic&family=Single+Day&family=ZCOOL+KuaiLe&display=swap');
+/* 
+    1. 캐릭터 설명 제목체
+    font-family: 'Gugi', cursive;
+    2. 캐릭터 설명 내용체
+    font-family: 'Single Day', cursive;
+    3. 캐릭터 설명 한자체
+    font-family: 'ZCOOL KuaiLe', cursive;
+    4. 전체 공통체(메뉴 등)
+    font-family: 'Nanum Gothic', sans-serif;
+*/
+
+html {
+   font-size: 10px;
+}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* inbox */
+.ibx {
+    max-width:1200px;
+    margin:0 auto;
+}
+
+/* 스크롤바 디자인 클래스 */
+/* 밴더사명 접두어
+    -webkit- (크롬, 사파리)
+    -ms-(IE)
+    -o-(오페라)
+    -moz-(파이어폭스)
+ */
+ /* 전체 스크롤바 크기 변경 */
+ .scbar::-webkit-scrollbar {
+    width: 7px;
+ }
+ /* 스크롤바 */
+ .scbar::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 5px;
+ }
+ /* 스크롤바 트랙 */
+ .scbar::-webkit-scrollbar-track {
+    background-color: #ddd;
+    border-radius: 5px;
+ }
+/* float 셋팅 클래스 */
+.clearfix > li {
+    float:left;
+}
+ /* float설정 지우기 클래스 */
+ .clearfix::after {
+    content: '';
+    display:block;
+    clear: both;
+ }
+
+ /* IR 클래스 */
+ /* 배경이미지 설명 클래스 (Image Replacement) */
+ .ir {
+    display: block;
+    text-indent: -9999em;
+ }
