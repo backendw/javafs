@@ -145,6 +145,38 @@
 
             }; //goSlide()
 
+            const abtn = document.querySelectorAll('.abtn button');
+            let autoI;
+
+            //console.log(abtn);
+            for (let x of abtn) {
+                x.onclick = ()=>{
+                    // 클릭된 요소의 클래스이름 여부
+                    let isB = x.classList.contains('start');
+                    //console.log('자동넘김버튼인가?',isB);
+
+                    if(isB) { // true이면 자동넘김
+                        // setInterval(()=>{
+                        //     goSlide(1);
+                        // }, 2000);
+                        autoI = setInterval(()=>goSlide(1), 2000);
+                    } else {
+                        clearInterval(autoI);
+                    } //if~else
+                    // 자기자신 버튼 보이기
+                    x.style.display = 'none';
+                    // '멈춤/자기자신' 버튼 숨기기
+                    /* 
+                        삼항 연산자
+                        isB ? 1 : 0
+                        isB가 true 이면 1, 아니면 0
+                    */
+                    abtn[isB?1:0].style.display = 'inline-block';
+                    
+                    //console.log('autoI변수:', autoI);
+                }; //click
+            } //for~of
+
         });
     </script>
 </head>
