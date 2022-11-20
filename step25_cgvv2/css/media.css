@@ -1,3 +1,110 @@
 @charset "utf-8";
 /* CGV 메인 페이지 미디어쿼리 CSS - media.css */
 
+/* 1310px이하 */
+@media screen and (max-width:1310px) {
+
+    /* gnb 위치 변경 */
+    .gnb {
+        right: 73px;
+    }
+}
+
+/* 1024px이하 */
+@media screen and (max-width:1024px) {
+
+    /* 내비 ul */
+    .gnb ul {
+        position: absolute;
+        top: 12px;
+        right: -59px;
+        width: 117px;
+        padding-top: 12px;
+        flex-direction: column;
+        align-items: flex-end;
+        display: none;
+    }
+
+    /* gnb 오버시 상위메뉴 보이게 */
+    .gnb:hover ul {
+        display: flex;
+    }
+
+    /* 오버시 서브메뉴 안나오게 */
+    .gnb ul>li:hover .smenu {
+        display: none;
+    }
+}
+
+/* 700px이하 */
+@media screen and (max-width:700px) {
+
+    /* 하단영역 */
+    .info {
+        flex-direction: column;
+        padding: 0 15px 20px;
+    }
+
+    /* 하단영역 파티션박스 div 공통 */
+    .info>div {
+        padding-top: 10px;
+    }
+
+    /* 하단로고 */
+    .info>div:first-child {
+        margin-right: 0;
+    }
+
+    /* 회사 주소 박스 */
+    .info address {
+        text-align: center;
+    }
+
+    /* sns 박스 */
+    .info>div:last-child {
+        margin-left: 0;
+    }
+}
+
+/* 500px이하 */
+@media screen and (max-width:500px) {
+
+    /* 메인 콘텐츠 박스 */
+    .cont {
+        /* 배경위치, 크기 변경 */
+        background-position: top;
+        background-size: 140%;
+    }
+
+    /* 스크린 위치, 크기 변경 */
+    #screen {
+        top: 11.3%;
+        left: 10.1%;
+        width: 81.5%;
+        height: 33.2%;
+    }
+
+    /* 메인 콘텐츠 박스 */
+    .cont::before {
+        padding-top: 140%;
+    }
+
+    /* 선택메뉴 */
+    .mlist {
+        width: 90%;
+        bottom: 2%;
+    }
+
+    /* 선택메뉴 ul */
+    .mlist ul {
+        flex-wrap: wrap;
+    }
+
+    /* 상위 li */
+    .mlist ul>li {
+        /* 3등분의 적절한 조정 */
+        flex-basis: 30.43%;
+        /* 기존에 flex:1 등분할 설정되어서 flex-basis는 기본 설정 0으로 되어 있음.
+        같은 의미인 width를 쓰면 적용안되는데 flex-basis가 더 우선한다. */
+    }
+}
