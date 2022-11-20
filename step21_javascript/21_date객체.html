@@ -29,37 +29,70 @@
         }
     </style>
     <script>
-        window.addEventListener("DOMContentLoaded",()=>{
+        window.addEventListener("DOMContentLoaded", () => {
             const tt = document.querySelectorAll('.tt');
             //console.log(tt);
 
-            const showTime = ()=>{
+            const showTime = () => {
                 //console.log('호출확인');
                 /* 
                     Date 객체 ~ 날짜, 시간 표현하는 객체
                     객체 생성법은 new 키워드로 생성!
                     new 키워드로 생성하는 순간 실제 객체가 메모리에 생성된다.(인스턴스)
                 */
-               // Date 객체를 메모리에 생성
-               let today = new Date();
-               /* 
-                    getFullYear() ~ 현재년도 4자리로 리턴
-                    getYear() ~ 현재년도 - 1900 결과를 리턴
-                    getMonth() ~ 0부터 시작하는 월의 순번을 리턴
-                    getDate() ~ 일을 리턴
-                    getDay() ~ 0부터 시작하는 요일의 순번을 리턴
-               */
-               tt[0].innerText = today.getFullYear();
-               tt[1].innerText = today.getMonth()+1;
-               tt[2].innerText = today.getDate();
+                // Date 객체를 메모리에 생성
+                let today = new Date();
+                /* 
+                     getFullYear() ~ 현재년도 4자리로 리턴
+                     getYear() ~ 현재년도 - 1900 결과를 리턴
+                     getMonth() ~ 0부터 시작하는 월의 순번을 리턴
+                     getDate() ~ 일을 리턴
+                     getDay() ~ 0부터 시작하는 요일의 순번을 리턴
+                */
+                tt[0].innerText = today.getFullYear();
+                tt[1].innerText = today.getMonth() + 1;
+                tt[2].innerText = today.getDate();
 
-               let week = ['일','월','화','수','목','금','토']
-               tt[3].innerText = week[today.getDay()];
-               
+                let week = ['일', '월', '화', '수', '목', '금', '토']
+                tt[3].innerText = week[today.getDay()];
+
+                // 시,분,초 두 자릿수 
+                // 10보다 작으면 한 자릿수 이므로 0을 붙여 리턴!
+                const addZero = num => num < 10 ? '0' + num : num;
+                /* const addZero = (num) => {
+                    return num < 10 ? '0' + num : num
+                }; */
+
+                let noon = '오전';
+                // 시간은 24시간제로 표현된다.
+                let H = today.getHours();
+
+                // 시간 테스트
+                // H = 13;
+
+                // 12보다 크면 12를 빼고 '오후'로 noon값 변경
+                if (H > 12) {
+                    H -= 12;
+                    noon = '오후';
+                } // if
+
+                tt[4].innerText = noon;
+                tt[5].innerText = addZero(H);
+                
+                let M = today.getMinutes();
+                // 분 테스트
+                // M = 7;
+                tt[6].innerText = addZero(M);
+
+                let S = today.getSeconds();
+                // 초 테스트
+                // S = 7;
+                tt[7].innerText = addZero(S);
+
             };
 
             // 임시 호출
-            window.onclick = ()=>showTime();
+            window.onclick = () => showTime();
         });
     </script>
 </head>
