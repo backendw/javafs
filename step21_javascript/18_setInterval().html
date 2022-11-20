@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>setInterval</title>
+    <style>
+        html,body {margin: 0; height:100%;}
+        body {background:url(https://images.adsttc.com/media/images/5f73/76e0/63c0/17bc/c900/04e8/large_jpg/HK_1_N3.jpg?1601402564) no-repeat 0 0/cover; color: white;}
+    </style>
     <script>
         /* 온라인상 배경이미지 주소를 배열로 셋팅 */
         const scene = [
@@ -32,9 +36,24 @@
             seq++;
             if (seq === 3) seq = 0;
         }, 3000);
+
+        // 화살표함수는 arguments 사용불가!
+        // const fn = ()=>{ 
+        function fn() {
+            // 호출 시 전달되는 arguments
+            console.log('전달값 arguments:',arguments);
+
+            // 배열값 자동 돌리기는 for~of문 사용!
+            for(let x of arguments) { // x는 각 배열 값
+                document.body.innerHTML += `<h2>${x}</h2>`;
+            }
+        }
+
+        setTimeout(() => {
+            fn('일정', '간격으로', '이미지', '변경하기');
+        }, 2000); //2초후 1번 실행
     </script>
 </head>
 <body>
-    <h1>일정 시간 간격으로 배경이미지 변경하기</h1>
 </body>
 </html>
