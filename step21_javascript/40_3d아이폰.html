@@ -96,8 +96,53 @@
                 transform: rotateX(370deg) rotateY(-330deg);
             }
         }
-      
+
+        /* 이벤트 처리박스 */
+        .evt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            /* 애니후 width:100vw로 변경! */
+            height: 100vh;
+            display: flex;
+        }
+        /* 등분할 박스 */
+        .evt div {
+            flex: 1;
+            /* outline: 2px dashed blue;
+            background-color: rgba(255, 0, 0, 0.438); */
+        }
+
     </style>
+    <script>
+        window.addEventListener("DOMContentLoaded",()=>{
+
+            /* 
+                setTimeout(함수, 시간) ~ 일정 시간후 실행함수
+                시간은 ms 단위(1000은 1초)
+            */
+           setTimeout(()=>{
+                document.querySelector('.evt').style.width = '100vw';
+           }, 5000); // 5초후 코드 실행
+
+            const evt = document.querySelectorAll('.evt div');
+            const iphone = document.querySelector('.iphone');
+            //console.log(iphone);
+
+            const setdeg = [-60,-40,40,60];
+
+            evt.forEach((ele,idx)=>{
+                //console.log(ele,'/',idx);
+                ele.onmouseover = ()=>{
+                    //console.log('나의 순번',idx,setdeg[idx]);
+                    iphone.style.transform = `rotateX(10deg) rotateY(${setdeg[idx]}deg)`;
+                    iphone.style.transition = '.4s ease-out';
+                }; //mouseover
+            }); //forEach
+        });
+    </script>
+
 </head>
 <body>
     <!-- 폰박스 -->
@@ -109,5 +154,14 @@
         <span></span>
         <span></span>
     </div>
+   
+     <!-- 이벤트 처리박스 -->
+     <div class="evt">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+     </div>
+
 </body>
 </html>
