@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <script>
+        /* 온라인상 배경이미지 주소를 배열로 셋팅 */
+        const scene = [
+
+            "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F1ee63066-4239-11ec-b414-b1f6389ab345.jpg?crop=2667%2C1500%2C0%2C0&resize=1200",
+
+            "https://www.asml.com/-/media/asml/images/careers/working-at-asml/south-korea/gyeongbokgung_palace_south_korea.jpg?mw=1920&rev=5154661f5c8943bb8c81419c01b327e2&hash=30B844A1D30F8A9B2BB0A2FE6377E953",
+
+            "https://images.adsttc.com/media/images/5f73/76e0/63c0/17bc/c900/04e8/large_jpg/HK_1_N3.jpg?1601402564",
+        ];
+
+        /* 
+           setInterval(함수, 시간) ~ 일정 시간 간격으로 함수 실행!
+           함수는 외부함수 또는 익명함수 사용
+           시간은 1/1000초로 단위없는 숫자 사용 
+        */
+
+        let seq = 0
+
+        setInterval(() => {
+            console.log('순번:',seq);
+
+            document.body.style.backgroundImage = `url(${scene[seq]}`;
+
+            seq++;
+            if (seq === 3) seq = 0;
+        }, 3000);
+    </script>
+</head>
+<body>
+    <h1>일정 시간 간격으로 배경이미지 변경하기</h1>
+</body>
+</html>
