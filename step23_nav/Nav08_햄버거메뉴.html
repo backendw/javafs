@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거메뉴</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+        html,body,h1,h2,ul {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Six Caps', sans-serif;
+            height: 3000px;
+            background-image: linear-gradient(to bottom, lightblue, lightgreen, lightpink);
+        }
+        h1 {
+            text-align: center;
+        }
+        .tit {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            font-size: 15vw;
+            text-align: center;
+        }
+
+        /* 햄버거버튼 */
+        .ham {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 50px;
+            outline:1px solid red;
+        }
+        /* 햄버거 버튼바 */
+        .ham span {
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background-color: #000;
+            transition: .3s;
+        }
+        .ham span:nth-child(1) {top:0;}
+        .ham span:nth-child(2) {top:20px; left:-50%;}
+        .ham span:nth-child(3) {top:40px;}
+
+        /* 햄버거 마우스 오버시 중앙바 변경 */
+        .ham:hover span:nth-child(2) {
+            left:0;
+        }
+        /* 클릭이벤트 JS처리시 클래스on셋팅 */
+        .ham.on span:nth-child(1) {
+            transform: rotate(45deg);
+            top:20px;
+        }
+        .ham.on span:nth-child(2) {
+            width:0;
+            left:50%;
+        }
+        .ham.on span:nth-child(3) {
+            transform: rotate(-45deg);
+            top:20px;
+        }
+        </style>
+        <script>
+            window.addEventListener("DOMContentLoaded",()=>{
+                const ham = document.querySelector('.ham');
+                ham.onclick = () => ham.classList.toggle('on');
+            });
+        </script>
+</head>
+<body>
+    <h1>유형8. 햄버거메뉴</h1>
+    <h2 class="tit">SHOW ME THE MENU!!!</h2>
+    <!-- 햄버거버튼 -->
+    <div class="ham">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- 전체메뉴박스 -->
+</body>
+</html>
