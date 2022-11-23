@@ -80,6 +80,34 @@
     .top.on .gnb {
         display:block;
     }
+    .top.on .tmenu {
+        position: fixed;
+        top: auto;
+        bottom: 5vh;
+        width: auto;
+        z-index: 99999;
+        display: block;
+    }
+    .top.on .tmenu a {
+        color:#fff;
+        font-size: 3vh;
+    }
+    .top.on .tmenu li {
+        float:none;
+    }
+    .top.on .tmenu ul, .top.on .tmenu ol {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .top.on .tmenu ul>li {
+        width: 50%;
+        padding-bottom: 15px;
+        box-sizing: border-box;
+    }
+    .top.on .tmenu>ul>li:first-child {
+        text-align: right;
+    }
 
     /* 상단 영역 높이 */
     .top {

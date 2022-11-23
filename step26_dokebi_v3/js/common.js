@@ -1,4 +1,4 @@
-// 도깨비 PJ v3 - 메인 페이지 JS - main.js
+// 도깨비 PJ v3 - 공통 기능 JS - common.js
 
 window.addEventListener("DOMContentLoaded", ()=>{
     // 햄버거 버튼 클릭 시 .top에 .on 추가/제거
