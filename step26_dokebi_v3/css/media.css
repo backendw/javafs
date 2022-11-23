@@ -53,17 +53,57 @@
 /* 870px 이하 */
 @media screen and (max-width:870px) {
     /* 없어질 요소들 */
-    .tmenu, .gnb, .blink {
+    .tmenu, .gnb, .blink, .smenu, .gnb>ul>li.sm::after, .gnb>ul>li>a::after {
         display: none;
     }
     /* 보여질 요소 */
     .ham {
         display: block;
     }
+
+    .top.on .logo {
+        position: fixed;
+        width: 100vw;
+        text-align: center;
+        z-index: 9999;
+    }
+    .top.on .ham {
+        position: fixed;
+        z-index: 99999;
+    }
+    .top.on .gnb {
+        display:block;
+    }
+
     /* 상단 영역 높이 */
     .top {
         height: 80px;
     }
+    /* GNB 메뉴 모바일형으로 변경하기 */
+    .gnb {
+        position: fixed;
+        z-index:999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.459);
+        margin: 0;
+    }
+    .gnb>ul {
+        padding-top: 20vh;
+    }
+    .gnb>ul>li {
+        float: none;
+        /* outline:2px dashed yellow; */
+    }
+    .gnb>ul>li>a {
+        color:#fff;
+        font-size: 5vh;
+        text-align: center;
+        line-height: 10vh;
+    }
+
     /* 캐릭터 부모박스 */
     .cbx {
         margin-top: 20px;
