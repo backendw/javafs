@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script>
+            /* 
+                제이쿼리는 JS를 쉽게 사용하기 위한 함수 집합 -> 라이브러리
+
+                1. 준비 이벤트
+                window.addEventListener("DOMContentLoaded",()=>{});
+                $(document).ready(function(){});
+
+                2. 선택자
+                document.querySelector('선택자')
+                $('선택자')
+
+                3. 이벤트
+                .on이벤트명(()=>{});
+                .이벤트명(()=>{}); 또는 .on('이벤트명', ()=>{});
+
+                4. 스타일
+                style.속성 = 값
+                style.속성 = 값
+                ...
+                css({속성: 값, 속성: 값, ...})
+
+                5. 글자 넣기
+                innerText
+                text()
+
+                6. 애니메이션
+                animate({CSS}, 시간, 이징, 함수);
+                이징: https://easings.net/ko
+
+                7. 제어문
+                for문
+                each() 메서드
+
+            */
+
+            $(() => {
+                $("header").click(() => {
+                    $("header h2").css({
+                        color: "red",
+                        fontSize: "50px",
+                        transform: "rotateY(720deg)",
+                        transition: "2s",
+                    }); //click()
+                });
+
+                $("#third span").mouseover(() => {
+                    $("body").css({
+                        backgroundColor: "pink",
+                        transition: "3s",
+                    });
+                }); //mouseover()
+
+                $('.tit').click(()=>{
+                    $('.ground li:first-child').css({
+                        fontSize: '50px',
+                        backgroundColor: 'lime',
+                        marginLeft: '100px',
+                        transition: '1s ease-in-out'
+                    });
+                    $('.ground li:nth-child(2)').css({
+                        fontSize: '50px',
+                        backgroundColor: 'yellow',
+                        marginLeft: '100px',
+                        transition: '1s ease-in-out 1s'
+                    });
+                    $('.ground li:nth-child(3)').css({
+                        fontSize: '50px',
+                        backgroundColor: 'pink',
+                        marginLeft: '100px',
+                        transition: '1s ease-in-out 2s'
+                    });
+                });
+
+                $('.tit2').click(()=>{
+                    $('#sub').text('이승기')
+                    .css({border:'1px dotted #000'})
+                    .animate({
+                        backgroundColor: 'yellow',
+                        color: 'blue',
+                        borderWidth: '10px',
+                        borderColor: 'green',
+                        fontSize: '42px'
+                    }, 800);
+                    $('#main').text('공유')
+                    .css({border:'3px solid yellow'})
+                    .delay(1000)
+                    .animate({
+                        backgroundColor: 'blue',
+                        color: 'white',
+                        borderWidth: '10px',
+                        borderColor: 'red',
+                        fontSize: '52px'
+                    }, 800);
+                    $('#total').text('싸랑해요~!')
+                    .css({border:'2px double purple'})
+                    .delay(2000)
+                    .animate({
+                        backgroundColor: 'black',
+                        color: 'red',
+                        borderWidth: '20px',
+                        borderColor: 'blue',
+                        fontSize: '152px'
+                    }, 800);
+                });
+
+            }); // document.ready()
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>클릭해보세요.</h2>
+        </header>
+        <ul>
+            <li id="third"><span>마우스를 올려보세요.</span></li>
+        </ul>
+        <button class="tit">클릭</button>
+        <button class="tit2">클릭2</button>
+        <ul class="ground">
+            <li id="sub">lime</li>
+            <li id="main">yellow</li>
+            <li id="total">pink</li>
+        </ul>
+    </body>
+</html>
