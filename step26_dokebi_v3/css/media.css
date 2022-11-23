@@ -70,6 +70,12 @@
     .top.on .ham {
         position: fixed;
         z-index: 99999;
+        color: #fff;
+    }
+    /* 햄버거 가상요소 모양 변경 */
+    .top.on .ham::before {
+        content: '×';
+        transform: scale(1.5);
     }
     .top.on .gnb {
         display:block;
