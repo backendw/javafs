@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM_1</title>
+        <style>
+            body > div {
+                outline: 1px solid red;
+                width: 200px;
+                display: inline-block;
+                vertical-align: top;
+                /*인라인블록은 인라인성격이 있어서 기본 옆으로 세로정렬은
+        baseline이므로 아래쪽선을 기준한다. 이것을 위줄 기준변경함*/
+            }
+
+            /*서브메뉴 숨기기*/
+            .smenu > div {
+                height: 0;
+                overflow: hidden;
+            }
+        </style>
+        <script>
+            /*
+        
+        DOM(Document Object Model)
+        1. 요소 선택
+            document.getElementById(아이디명)
+            document.querySelector('선택자')
+
+            document.getElementsByClassName(클래스명)
+            document.getElementsByTagName(태그명)
+            document.querySelectorAll('선택자')
+                length ~ 전체개수
+                item(순번), [순번] ~ 순번선택
+        2. 요소 변경
+            innerHTML ~ html 변경
+            innerText ~ 텍스트 변경
+            선택요소.속성명 = 값
+            setAttribute(속성명,속성값)
+            getAttribute(속성명)
+        3. 스타일 변경
+            선택요소.style.속성명 = 값
+        4. 이벤트 적용
+            선택요소.on이벤트명 = function(){실행코드}
+            선택요소.addEventListener(이벤트명, 함수)
+        5. 이벤트 종류
+            click, dbclick, mousedown, mouseup, mousemove, 
+            mouseover, mouseout, mousewheel,
+            keydown, keyup, keypress, focus
+            contextmenu, load, DOMContentLoaded 
+
+        6. 요소 크기/위치 속성
+            선택요소.offsetWidth
+            선택요소.offsetHeight
+            선택요소.offsetTop
+            선택요소.offsetLeft
+
+        7. 페이지 이동
+            window.open() ~ 새 창 열기
+            location.href = 'URL' ~ 위치 이동
+        
+        */
+            window.addEventListener("DOMContentLoaded", () => {
+                const smenu = document.querySelectorAll(".smenu");
+
+                for (let x of smenu) {
+                    x.onmouseover = () => {
+                        let tg = x.querySelector("div");
+                        let hv = tg.querySelector("ol").offsetHeight;
+                        //console.log('ol높이값:',hv);
+                        tg.style.height = hv + 10 + "px";
+                        tg.style.transition = "height .4s ease-out";
+                    };
+                    x.onmouseout = () => {
+                        let tg = x.querySelector("div");
+                        tg.style.height = 0;
+                    };
+                } //for~of
+
+                const link = document.querySelectorAll(".smenu ol a");
+                for (let x of link) {
+                    x.onclick = () => {
+                        let txt = x.innerText;
+                        console.log(txt);
+                        let url;
+                        switch (txt) {
+                            case "Google":
+                                url = "http://www.google.com";
+                                break;
+                            case "Naver":
+                                url = "http://www.naver.com";
+                                break;
+                            case "Daum":
+                                url = "http://www.daum.net";
+                                break;
+                            case "Nate":
+                                url = "http://www.nate.com";
+                                break;
+                            case "SK":
+                                url = "http://www.sktelecom.com";
+                                break;
+                            case "KT":
+                                url = "http://www.kt.com";
+                                break;
+                            case "Uplus":
+                                url = "http://www.uplus.co.kr";
+                                break;
+                            case "CGV":
+                                url = "http://www.cgv.co.kr";
+                                break;
+                            case "MEGABOX":
+                                url = "http://www.megabox.co.kr";
+                                break;
+                            case "LOTTE CINEMA":
+                                url = "https://www.lottecinema.co.kr/NLCHS";
+                                break;
+                            case "GMARKET":
+                                url = "http://www.gmarket.co.kr";
+                                break;
+                            case "11번가":
+                                url = "http://www.11st.co.kr";
+                                break;
+                            case "Auction":
+                                url = "http://www.auction.co.kr";
+                                break;
+                            case "스토어팜":
+                                url = "https://shopping.naver.com/";
+                                break;
+                            case "인터파크":
+                                url = "http://www.interpark.co.kr";
+                                break;
+                            case "쿠팡":
+                                url = "http://www.coopang.co.kr";
+                                break;
+                            case "Apple":
+                                url = "http://www.apple.com";
+                                break;
+                            case "Samsung":
+                                url = "http://www.samsung.com";
+                                break;
+                            case "넷마블":
+                                url = "http://www.netmarble.net";
+                                break;
+                            case "넥슨":
+                                url = "https://www.nexon.com";
+                                break;
+                            case "IMC":
+                                url = "http://www.imc.co.kr";
+                                break;
+                        } //switch
+                        window.open().location.href = url;
+                    };
+                } //for~of
+            }); //DOMContentLoaded
+        </script>
+    </head>
+    <body>
+        <div id="div01">
+            마우스오버시 <br />
+            1. 서브메뉴 보이기 <br />
+            2. 링크이동하기
+
+            <ul>
+                <li class="smenu">
+                    <a href="#">검색포털사이트</a>
+                    <div>
+                        <ol>
+                            <li><a href="#">Google</a></li>
+                            <li><a href="#">Naver</a></li>
+                            <li><a href="#">Daum</a></li>
+                            <li><a href="#">Nate</a></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="smenu">
+                    <a href="#">통신사사이트</a>
+                    <div>
+                        <ol>
+                            <li><a href="#">SK</a></li>
+                            <li><a href="#">KT</a></li>
+                            <li><a href="#">Uplus</a></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="smenu">
+                    <a href="#">영화관사이트</a>
+                    <div>
+                        <ol>
+                            <li><a href="#">CGV</a></li>
+                            <li><a href="#">MEGABOX</a></li>
+                            <li><a href="#">LOTTE CINEMA</a></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="smenu">
+                    <a href="#">쇼핑몰사이트</a>
+                    <div>
+                        <ol>
+                            <li><a href="#">GMARKET</a></li>
+                            <li><a href="#">11번가</a></li>
+                            <li><a href="#">Auction</a></li>
+                            <li><a href="#">스토어팜</a></li>
+                            <li><a href="#">인터파크</a></li>
+                            <li><a href="#">쿠팡</a></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="smenu">
+                    <a href="#">스마트폰사이트</a>
+                    <div>
+                        <ol>
+                            <li><a href="#">Apple</a></li>
+                            <li><a href="#">Samsung</a></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="smenu">
+                    <a href="#">게임사이트</a>
+                    <div>
+                        <ol>
+                            <li><a href="#">넷마블</a></li>
+                            <li><a href="#">넥슨</a></li>
+                            <li><a href="#">IMC</a></li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </body>
+</html>
