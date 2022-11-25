@@ -48,7 +48,7 @@
             document.createElement(태그명) ~ 요소 생성(메모리상에 생성함)
             document.createAttribute(속성명) ~ 요소에 새로운 속성 넣기(메모리상에 생성함)
             생성된속성.value = 값 ~ 생성된 속성에 값 넣기
-            선택요쇼.setAttributeNode(새로운속성) ~ 요소의 새로운 속성 넣기
+            선택요소.setAttributeNode(새로운속성) ~ 요소의 새로운 속성 넣기
         */
 
         window.addEventListener("DOMContentLoaded",()=>{
@@ -71,6 +71,22 @@
                     ximg.title = ximg.alt + (ximg.alt === '아이언맨'?'을':'를') + ' 클릭하면 삭제됩니다!';
                     x.onclick = () => x.remove();
                 }
+            };
+
+            // 맨뒤로 이동
+            const mvl = document.querySelector('.mvl');
+            mvl.onclick = () => {
+                // fele: first element(첫 번째 요소)
+                let fele = ctg.querySelectorAll('li')[0];
+                ctg.appendChild(fele);
+            };
+
+            // 맨앞으로 이동
+            const mvf = document.querySelector('.mvf');
+            mvf.onclick = () => {
+                // fele: first element(첫 번째 요소)
+                let fele = ctg.querySelectorAll('li')[0];
+                ctg.appendChild(fele);
             };
         });
     </script>
