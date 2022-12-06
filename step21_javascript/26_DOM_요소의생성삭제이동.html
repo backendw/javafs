@@ -52,6 +52,7 @@
         */
 
         window.addEventListener("DOMContentLoaded",()=>{
+            // 새 리스트 생성
             const ctg = document.querySelector('#div02 ul');
             const ialt = ['아이언맨','딱딱이','토르','닥스','스타로드'];
             const nbt = document.querySelector('.nbt');
@@ -84,9 +85,10 @@
             // 맨앞으로 이동
             const mvf = document.querySelector('.mvf');
             mvf.onclick = () => {
-                // fele: first element(첫 번째 요소)
-                let fele = ctg.querySelectorAll('li')[0];
-                ctg.appendChild(fele);
+                let eles = ctg.querySelectorAll('li');
+                // 맨뒤li는 eles[마지막번호], 마지막번호는 개수-1
+                // 배열과 컬렉션의 마지막 순번은 항상 [개수-1] 이다.
+                ctg.insertBefore(eles[eles.length-1], eles[0]);
             };
         });
     </script>
